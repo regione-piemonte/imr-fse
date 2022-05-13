@@ -1,0 +1,396 @@
+<wsdl:definitions
+	xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:tns="http://xxx.xxx.xx/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ScaricoStudiWSBean"
+	targetNamespace="http://xxx.xxx.xx/">
+	<wsdl:types>
+		<xs:schema xmlns:ns1="http://xxx.xxx.xx/"
+			xmlns:tns="http://xxx.xxx.xx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://xxx.xxx.xx/">
+			<xs:import namespace="http://xxx.xxx.xx/" />
+			<xs:element name="VerificaStatoRichiesta2Request"
+				type="tns:VerificaStatoRichiesta2Request" />
+			<xs:element name="VerificaStatoRichiesta2Response"
+				type="tns:VerificaStatoRichiesta2Response" />
+			<xs:element name="VerificaStatoListaRichiesteRequest"
+				type="tns:VerificaStatoListaRichiesteRequest" />
+			<xs:element name="VerificaStatoListaRichiesteResponse"
+				type="tns:VerificaStatoListaRichiesteResponse" />				
+			<xs:element name="VerificaStatoRichiestaRequest"
+				type="tns:VerificaStatoRichiestaRequest" />
+			<xs:element name="VerificaStatoRichiestaResponse"
+				type="tns:VerificaStatoRichiestaResponse" />
+			<xs:element name="AggiornaStatoRichiestaRequest"
+				type="tns:AggiornaStatoRichiestaRequest" />
+			<xs:element name="AggiornaStatoRichiestaResponse"
+				type="tns:AggiornaStatoRichiestaResponse" />
+			<xs:element name="ScaricoStudiRequest"
+				type="tns:ScaricoStudiRequest" />
+			<xs:element name="ScaricoStudiResponse"
+				type="tns:ScaricoStudiResponse" />
+			<xs:element name="CancellaPacchettoRequest"
+				type="tns:CancellaPacchettoRequest" />
+			<xs:element name="CancellaPacchettoResponse"
+				type="tns:CancellaPacchettoResponse" />
+			<xs:element name="GetElencoPacchettiScadutiRequest"
+				type="tns:GetElencoPacchettiScadutiRequest" />
+			<xs:element name="GetElencoPacchettiScadutiResponse"
+				type="tns:GetElencoPacchettiScadutiResponse" />
+			<xs:element name="SetPacchettoCancellatoRequest"
+				type="tns:SetPacchettoCancellatoRequest" />
+			<xs:element name="SetPacchettoCancellatoResponse"
+				type="tns:SetPacchettoCancellatoResponse" />
+			<xs:complexType name="errore">
+				<xs:complexContent>
+					<xs:extension base="tns:codifica">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="codifica">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="codice" type="xs:string"/>
+					<xs:element minOccurs="0" name="descrizione" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="VerificaStatoRichiesta2Request">
+				<xs:sequence>					
+					<xs:element minOccurs="0" name="codiceFiscale"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codCL"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codDocumentoDipartimentale"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="arvchivioDocumentoIlec"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="idDocumentoIlec"
+						type="xs:long" />					
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="VerificaStatoRichiesta2Response">
+				<xs:complexContent>
+					<xs:extension base="ns1:serviceResponse">	
+					<xs:sequence>
+						<xs:element minOccurs="0" name="statoRichiesta"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="zipName"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="directory"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="checksum"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="arvchivioDocumentoIlec"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="codDocumentoDipartimentale"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="idDocumentoIlec"
+							type="xs:long" />
+					</xs:sequence>					
+					</xs:extension>																						
+				</xs:complexContent>
+			</xs:complexType>						
+			<xs:complexType name="VerificaStatoListaRichiesteRequest">
+				<xs:sequence>					
+					<xs:element minOccurs="0" name="codiceFiscale"
+						type="xs:string" />
+					<xs:element form="qualified" maxOccurs="unbounded"
+							minOccurs="0" name="idReferto"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="pin"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="VerificaStatoListaRichiesteResponse">
+				<xs:complexContent>
+					<xs:extension base="ns1:serviceResponse">	
+					<xs:sequence>					
+						<xs:element form="qualified" maxOccurs="unbounded"
+							minOccurs="0" name="listaStatoRichiestaScarico" type="tns:statoRichiestaScarico" />																					
+					</xs:sequence>					
+					</xs:extension>																						
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="statoRichiestaScarico">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="idReferto"
+							type="xs:string" />
+					<xs:element minOccurs="0" name="idPacchetto"
+							type="xs:string" />
+					<xs:element minOccurs="0" name="statoRichiesta"
+							type="xs:string" />
+					<xs:element minOccurs="0" name="dimensione"
+							type="xs:string" />	
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="VerificaStatoRichiestaRequest">
+				<xs:sequence>					
+					<xs:element minOccurs="0" name="codiceFiscale"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="idReferto"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="pin"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="VerificaStatoRichiestaResponse">
+				<xs:complexContent>
+					<xs:extension base="ns1:serviceResponse">	
+					<xs:sequence>
+						<xs:element minOccurs="0" name="idPacchetto"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="statoRichiesta"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="dimensione"
+							type="xs:string" />
+					</xs:sequence>					
+					</xs:extension>																						
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="ScaricoStudiRequest">
+				<xs:sequence>					
+					<xs:element minOccurs="0" name="codiceFiscale"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="email"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="fuoriRegione"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="idReferto"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="periodoConservazione"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="pin"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="strutturaSanitaria"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="sistemaOperativo"
+						type="xs:string" />						
+					<xs:element minOccurs="0" name="acessionNumbers"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="asr"
+						type="xs:string" />					
+				</xs:sequence>
+			</xs:complexType>			
+			<xs:complexType name="ScaricoStudiResponse">
+				<xs:complexContent>
+					<xs:extension base="ns1:serviceResponse">											
+					</xs:extension>																						
+				</xs:complexContent>
+			</xs:complexType>												
+			<xs:complexType name="CancellaPacchettoRequest">
+				<xs:sequence>										
+					<xs:element minOccurs="0" name="idPacchetto"
+						type="xs:string" />				
+					<xs:element minOccurs="0" name="pin"
+						type="xs:string" />								
+				</xs:sequence>
+			</xs:complexType>			
+			<xs:complexType name="CancellaPacchettoResponse">
+				<xs:complexContent>
+					<xs:extension base="ns1:serviceResponse">											
+					</xs:extension>																						
+				</xs:complexContent>
+			</xs:complexType>						
+			<xs:complexType name="GetElencoPacchettiScadutiResponse">
+				<xs:complexContent>
+					<xs:extension base="ns1:serviceResponse">	
+					<xs:sequence>
+						<xs:element form="qualified" maxOccurs="unbounded"
+							minOccurs="0" name="elencoPacchetti"
+						type="tns:ElencoPacchetti" />
+					</xs:sequence>					
+					</xs:extension>																						
+				</xs:complexContent>
+			</xs:complexType>						
+			<xs:complexType name="GetElencoPacchettiScadutiRequest">				
+			</xs:complexType>			
+			<xs:complexType name="ElencoPacchetti">								
+				<xs:sequence>
+					<xs:element minOccurs="0" name="idRichiestaScarico"
+					type="xs:string" />
+					<xs:element minOccurs="0" name="directory"
+					type="xs:string" />
+					<xs:element minOccurs="0" name="zipName"
+					type="xs:string" />
+				</xs:sequence>				
+			</xs:complexType>							
+			<xs:complexType name="SetPacchettoCancellatoResponse">
+				<xs:complexContent>
+					<xs:extension base="ns1:serviceResponse">											
+					</xs:extension>																						
+				</xs:complexContent>
+			</xs:complexType>						
+			<xs:complexType name="SetPacchettoCancellatoRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="idRichiestaScarico"
+					type="xs:string" />
+				</xs:sequence>							
+			</xs:complexType>																	
+			<xs:simpleType name="risultatoCodice">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="SUCCESSO" />
+					<xs:enumeration value="FALLIMENTO" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:complexType name="AggiornaStatoRichiestaRequest">
+				<xs:sequence>					
+				<xs:element minOccurs="0" name="codiceFiscale"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="codCL"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="codDocumentoDipartimentale"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="arvchivioDocumentoIlec"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="statoRichiesta"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="errore"
+					type="xs:string" />
+			</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="AggiornaStatoRichiestaResponse">
+				<xs:complexContent>
+					<xs:extension base="ns1:serviceResponse"/>
+				</xs:complexContent>	
+			</xs:complexType>			                                                      
+		</xs:schema>
+		<xs:schema xmlns:ns1="http://xxx.xxx.xx/"
+			xmlns:tns="http://xxx.xxx.xx/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://xxx.xxx.xx/">
+			<xs:import namespace="http://xxx.xxx.xx/" />			
+			<xs:complexType name="serviceResponse">
+				<xs:sequence>
+					<xs:element form="qualified" maxOccurs="unbounded"
+						minOccurs="0" name="errori" type="ns1:errore" />
+					<xs:element minOccurs="0" name="esito"
+						type="ns1:risultatoCodice" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		
+	</wsdl:types>
+	<wsdl:message name="verificaStatoRichiesta2Response">
+		<wsdl:part element="tns:VerificaStatoRichiesta2Response" name="VerificaStatoRichiesta2Response">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="verificaStatoRichiesta2Request">
+		<wsdl:part element="tns:VerificaStatoRichiesta2Request" name="verificaStatoRichiesta2Request">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="aggiornaStatoRichiestaRequest">
+		<wsdl:part element="tns:AggiornaStatoRichiestaRequest" name="aggiornaStatoRichiestaRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="aggiornaStatoRichiestaResponse">
+		<wsdl:part name="AggiornaStatoRichiestaResponse" element="tns:AggiornaStatoRichiestaResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ScaricoStudiRequest">
+		<wsdl:part name="scaricoStudiRequest" element="tns:ScaricoStudiRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ScaricoStudiResponse">
+		<wsdl:part name="scaricoStudiResponse" element="tns:ScaricoStudiResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="verificaStatoRichiestaRequest">
+		<wsdl:part name="VerificaStatoRichiestaRequest" element="tns:VerificaStatoRichiestaRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="verificaStatoRichiestaResponse">
+		<wsdl:part name="VerificaStatoRichiestaResponse" element="tns:VerificaStatoRichiestaResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="VerificaStatoListaRichiesteRequest">
+		<wsdl:part name="VerificaStatoListaRichiesteRequest" element="tns:VerificaStatoListaRichiesteRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="VerificaStatoListaRichiesteResponse">
+		<wsdl:part name="VerificaStatoListaRichiesteResponse" element="tns:VerificaStatoListaRichiesteResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="CancellaPacchettoRequest">
+		<wsdl:part name="CancellaPacchettoRequest" element="tns:CancellaPacchettoRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="CancellaPacchettoResponse">
+		<wsdl:part name="CancellaPacchettoResponse" element="tns:CancellaPacchettoResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetElencoPacchettiScadutiRequest">
+		<wsdl:part name="GetElencoPacchettiScadutiRequest" element="tns:GetElencoPacchettiScadutiRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetElencoPacchettiScadutiResponse">
+		<wsdl:part name="GetElencoPacchettiScadutiResponse" element="tns:GetElencoPacchettiScadutiResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="setPacchettoCancellatoRequest">
+		<wsdl:part name="SetPacchettoCancellatoRequest" element="tns:SetPacchettoCancellatoRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="setPacchettoCancellatoResponse">
+		<wsdl:part name="SetPacchettoCancellatoResponse" element="tns:SetPacchettoCancellatoResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ScaricoStudiWSBean">
+		<wsdl:operation name="verificaStatoRichiesta2">
+			<wsdl:input message="tns:verificaStatoRichiesta2Request" 
+			name="verificaStatoRichiesta2Request">
+			</wsdl:input>
+			<wsdl:output message="tns:verificaStatoRichiesta2Response" name="verificaStatoRichiesta2Response">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="aggiornaStatoRichiesta">
+			<wsdl:input message="tns:aggiornaStatoRichiestaRequest"
+			name="aggiornaStatoRichiestaRequest"></wsdl:input>
+			<wsdl:output message="tns:aggiornaStatoRichiestaResponse"
+			name="aggiornaStatoRichiestaResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ScaricoStudi">
+			<wsdl:input message="tns:ScaricoStudiRequest"></wsdl:input>
+			<wsdl:output message="tns:ScaricoStudiResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="verificaStatoRichiesta">
+			<wsdl:input message="tns:verificaStatoRichiestaRequest"></wsdl:input>
+			<wsdl:output message="tns:verificaStatoRichiestaResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VerificaStatoListaRichieste">
+			<wsdl:input message="tns:VerificaStatoListaRichiesteRequest"></wsdl:input>
+			<wsdl:output message="tns:VerificaStatoListaRichiesteResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CancellaPacchetto">
+			<wsdl:input message="tns:CancellaPacchettoRequest"></wsdl:input>
+			<wsdl:output message="tns:CancellaPacchettoResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getElencoPacchettiScaduti">
+			<wsdl:input message="tns:GetElencoPacchettiScadutiRequest"></wsdl:input>
+			<wsdl:output message="tns:GetElencoPacchettiScadutiResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="setPacchettoCancellato">
+			<wsdl:input message="tns:setPacchettoCancellatoRequest"></wsdl:input>
+			<wsdl:output message="tns:setPacchettoCancellatoResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ScaricoStudiWSBeanSoapBinding"
+		type="tns:ScaricoStudiWSBean">
+		<soap12:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="verificaStatoRichiesta2">
+			<soap12:operation soapAction="" style="document" />
+			<wsdl:input name="verificaStatoRichiesta2Request">
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="verificaStatoRichiesta2Response">
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="aggiornaStatoRichiesta">
+			<soap12:operation soapAction="" style="document" />
+			<wsdl:input name="aggiornaStatoRichiestaRequest">
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="aggiornaStatoRichiestaResponse">
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ScaricoStudiWSBean">
+		<wsdl:port binding="tns:ScaricoStudiWSBeanSoapBinding"
+			name="ScaricoStudiWSBeanPort">
+			<soap12:address
+				location="http://localhost:8080/ScaricoStudiWSBean/ws/scaricoStudiWSBean" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

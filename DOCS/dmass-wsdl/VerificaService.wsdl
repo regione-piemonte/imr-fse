@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="VerificaService" targetNamespace="http://xxx.xxx.xx/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://xxx.xxx.xx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xxx.xxx.xx/" xmlns:ns1="http://xxx.xxx.xx/" xmlns:tns="http://xxx.xxx.xx/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:import namespace="http://xxx.xxx.xx/" />
+   <xs:element name="VerificaOscuramentoDocRequest" type="tns:VerificaOscuramentoDocRequest" />
+   <xs:element name="VerificaPinRequest" type="tns:VerificaPinRequest" />
+   <xs:element name="richiedenteInfo" type="ns1:richiedenteInfo" />
+   <xs:complexType name="VerificaOscuramentoDocRequest">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="richiedente" type="ns1:richiedenteInfo" />
+         <xs:element minOccurs="0" name="datiDocumento" type="ns1:datiDocumento" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applicativoVerticale">
+      <xs:complexContent>
+         <xs:extension base="tns:codifica">
+            <xs:sequence />
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="codifica">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="codice" type="xs:string" />
+         <xs:element minOccurs="0" name="descrizione" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applicazioneRichiedente">
+      <xs:complexContent>
+         <xs:extension base="tns:codifica">
+            <xs:sequence />
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="verificaOscuramentoDocResponse">
+      <xs:complexContent>
+         <xs:extension base="ns1:serviceResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" ref="ns1:datiDocumentoResponse" />
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="errore">
+      <xs:complexContent>
+         <xs:extension base="tns:codifica">
+            <xs:sequence />
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="VerificaPinRequest">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="richiedente" type="ns1:richiedenteInfo" />
+         <xs:element minOccurs="0" name="datiDocumento" type="ns1:datiDocumento" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verificaPinResponse">
+      <xs:complexContent>
+         <xs:extension base="ns1:serviceResponse">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="datiDocumentoResponse" type="ns1:datiDocumentoResponse" />
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="verificaUtenteAbilitatoRequest">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="richiedente" type="ns1:richiedenteInfo" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verificaUtenteAbilitatoResponse">
+      <xs:complexContent>
+         <xs:extension base="ns1:serviceResponse">
+            <xs:sequence>
+               <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns1:listaProfili" />
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:simpleType name="risultatoCodice">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="SUCCESSO" />
+         <xs:enumeration value="FALLIMENTO" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="verificaOscuramentoDoc" nillable="true" type="tns:VerificaOscuramentoDocRequest" />
+   <xs:element name="verificaOscuramentoDocResponse" nillable="true" type="tns:verificaOscuramentoDocResponse" />
+   <xs:element name="verificaPin" nillable="true" type="tns:VerificaPinRequest" />
+   <xs:element name="verificaPinResponse" nillable="true" type="tns:verificaPinResponse" />
+   <xs:element name="verificaUtenteAbilitato" nillable="true" type="tns:verificaUtenteAbilitatoRequest" />
+   <xs:element name="verificaUtenteAbilitatoResponse" nillable="true" type="tns:verificaUtenteAbilitatoResponse" />
+</xs:schema><xs:schema targetNamespace="http://xxx.xxx.xx/" version="1.0" xmlns:ns1="http://xxx.xxx.xx/" xmlns:tns="http://xxx.xxx.xx/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:import namespace="http://xxx.xxx.xx/" />
+   <xs:element name="datiDocumentoResponse" type="tns:datiDocumentoResponse" />
+   <xs:element name="listaProfili" type="ns1:codifica" />
+   <xs:complexType name="richiedenteInfo">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="applicativoVerticale" type="ns1:applicativoVerticale" />
+         <xs:element minOccurs="0" name="applicazione" type="ns1:applicazioneRichiedente" />
+         <xs:element minOccurs="0" name="codiceFiscale" type="xs:string" />
+         <xs:element minOccurs="0" name="ip" type="xs:string" />
+         <xs:element minOccurs="0" name="numeroTransazione" type="xs:string" />
+         <xs:element minOccurs="0" name="ruolo" type="tns:ruolo" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ruolo">
+      <xs:complexContent>
+         <xs:extension base="ns1:codifica">
+            <xs:sequence />
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datiDocumento">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="codCL" type="xs:string" />
+         <xs:element minOccurs="0" name="codDocumentoDipartimentale" type="xs:string" />
+         <xs:element minOccurs="0" name="idDocumentoIlec" type="xs:string" />
+         <xs:element minOccurs="0" name="pin" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="serviceResponse">
+      <xs:sequence>
+         <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="errori" type="ns1:errore" />
+         <xs:element minOccurs="0" name="esito" type="ns1:risultatoCodice" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datiDocumentoResponse">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="codCL" type="xs:string" />
+         <xs:element minOccurs="0" name="codDocumentoDipartimentale" type="xs:string" />
+         <xs:element minOccurs="0" name="idDocumentoIlec" type="xs:string" />
+         <xs:element minOccurs="0" name="oscurato" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>  </wsdl:types>
+  <wsdl:message name="verificaOscuramentoDocResponse">
+    <wsdl:part element="tns:verificaOscuramentoDocResponse" name="verificaOscuramentoDocResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificaUtenteAbilitatoResponse">
+    <wsdl:part element="tns:verificaUtenteAbilitatoResponse" name="verificaUtenteAbilitatoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificaPin">
+    <wsdl:part element="tns:verificaPin" name="verificaPin">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificaUtenteAbilitato">
+    <wsdl:part element="tns:verificaUtenteAbilitato" name="verificaUtenteAbilitato">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificaOscuramentoDoc">
+    <wsdl:part element="tns:verificaOscuramentoDoc" name="verificaOscuramentoDoc">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificaPinResponse">
+    <wsdl:part element="tns:verificaPinResponse" name="verificaPinResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VerificaService">
+    <wsdl:operation name="verificaOscuramentoDoc">
+      <wsdl:input message="tns:verificaOscuramentoDoc" name="verificaOscuramentoDoc">
+    </wsdl:input>
+      <wsdl:output message="tns:verificaOscuramentoDocResponse" name="verificaOscuramentoDocResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaPin">
+      <wsdl:input message="tns:verificaPin" name="verificaPin">
+    </wsdl:input>
+      <wsdl:output message="tns:verificaPinResponse" name="verificaPinResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaUtenteAbilitato">
+      <wsdl:input message="tns:verificaUtenteAbilitato" name="verificaUtenteAbilitato">
+    </wsdl:input>
+      <wsdl:output message="tns:verificaUtenteAbilitatoResponse" name="verificaUtenteAbilitatoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VerificaServiceSoapBinding" type="tns:VerificaService">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="verificaOscuramentoDoc">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="verificaOscuramentoDoc">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaOscuramentoDocResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaPin">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="verificaPin">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaPinResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaUtenteAbilitato">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="verificaUtenteAbilitato">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="verificaUtenteAbilitatoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VerificaService">
+    <wsdl:port binding="tns:VerificaServiceSoapBinding" name="VerificaServicePort">
+      <soap12:address location="http://localhost:8080//xxx/VerificaService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
