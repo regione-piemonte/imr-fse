@@ -39,10 +39,10 @@ I servizi sono:
 Il WSDL è riportato nella directory DOCS/wsdl-dmass
 
 ### Sistema gateway PACS 
-Il modulo DMASS dipende da un modulo che comprende: 
+Il modulo DMASS dipende dal modulo DMASSIMR che comprende: 
 - un servizio JSON/REST (createPDI) invocato per la creazione del pacchetto delle immagini. 
 - un batch che gli notifica sul servizio JSON/REST (sendCompleteNotice)  la conclusione della creazione del pacchetto.
-- 
+
 ### Sistema di autenticazione
 Il sistema di autenticazione con cui sono protette le servlet della componente DMASSIMR  è esterno al presente prodotto ed è basato sul framework SHIBBOLETH composto da Service Provider e Identity Provider. 
 
