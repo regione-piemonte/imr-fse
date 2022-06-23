@@ -70,7 +70,7 @@ landingURL: 'https://github.com/regione-piemonte/imr-fse.git'
 legal:
   authorsFile: |-
     https://raw.githubusercontent.com/regione-piemonte/imr-fse/master/COPYRIGHTS.txt
-  license: LGPL-2.0-only
+  license: GPL-2.0-only
   mainCopyrightOwner: Regione Piemonte
 localisation:
   availableLanguages:
