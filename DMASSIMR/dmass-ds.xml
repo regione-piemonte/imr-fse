@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- nomi moduli presi da /appserv/jboss/ajb620/part092node01/standalone/configuration/standalone-full-ha.xml -->
+<datasources>
+<datasource jndi-name="java:/jdbc/dmassDatasource" pool-name="dmassDatasource" enabled="true" use-ccm="false">
+        <connection-url>jdbc:postgresql://xxx.xxx.xxx.xxx:5432/dmass</connection-url>
+        <driver-class>org.postgresql.Driver</driver-class>
+        <driver>postgresql</driver>
+        <new-connection-sql>SET statement_timeout TO 30000</new-connection-sql>
+        <pool>
+                <min-pool-size>1</min-pool-size>
+                <max-pool-size>15</max-pool-size>
+                <prefill>true</prefill>
+        </pool>
+        <security>
+                  <user-name>yyyyy</user-name>
+                  <password>yyyyy</password>
+        </security>
+        <validation>
+                <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker"/>
+                <validate-on-match>true</validate-on-match>
+                <background-validation>false</background-validation>
+                <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"/>
+        </validation>
+        <timeout>
+                <blocking-timeout-millis>30000</blocking-timeout-millis>
+                <idle-timeout-minutes>15</idle-timeout-minutes>
+        </timeout>
+</datasource>
+
+</datasources>

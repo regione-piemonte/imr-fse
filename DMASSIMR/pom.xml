@@ -1,0 +1,350 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.21.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>it.csi.dmass</groupId>
+	<artifactId>dmasssrv</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>dmasssrv</name>
+	<packaging>war</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<postgresql.driver.version>42.2.18</postgresql.driver.version>
+		<resteasy-version>2.3.6.Final</resteasy-version>
+		<resteasy-spring-version>2.2.1.GA</resteasy-spring-version>
+		<cxf.version>3.2.1</cxf.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>					
+		<dependency>
+  			<groupId>ch.qos.logback</groupId>
+  			<artifactId>logback-classic</artifactId>  			
+		</dependency>
+
+		<dependency>
+  			<groupId>ch.qos.logback</groupId>
+  			<artifactId>logback-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.xml.messaging.saaj</groupId>
+			<artifactId>saaj-impl</artifactId>
+			<version>1.3.28</version>
+		</dependency>
+
+
+		<!-- cxf -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-codegen-plugin -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-codegen-plugin</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.wss4j/wss4j -->
+		<dependency>
+			<groupId>org.apache.wss4j</groupId>
+			<artifactId>wss4j</artifactId>
+			<version>2.0.0</version>
+			<type>pom</type>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-security</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-features-logging</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>dmasssrv</finalName>		
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.0.0</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+						<configuration>
+							<files>
+								<file>${project.basedir}/env/${target}.properties</file>
+							</files>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>		
+			<plugin> 
+				<groupId>com.google.code.maven-replacer-plugin</groupId> 
+				<artifactId>replacer</artifactId> 
+				<version>1.5.3</version> 
+				<executions> 
+					<execution> 
+					<phase>prepare-package</phase> 
+					<goals> <goal>replace</goal> </goals>
+				</execution> 
+				</executions> 
+				<configuration> 
+					<file>${project.build.directory}/classes/application.properties</file> 
+					<replacements> 
+						<replacement> <token>@@dmassjndiName@@</token> <value>${dmassjndiName}</value> </replacement>
+						<replacement> <token>@@client.utilityService.address@@</token> <value>${client.utilityService.address}</value> </replacement>
+						<replacement> <token>@@userUtility@@</token> <value>${userUtility}</value> </replacement>
+						<replacement> <token>@@passUtility@@</token> <value>${passUtility}</value> </replacement>
+						<replacement> <token>@@userDma@@</token> <value>${userDma}</value> </replacement>
+						<replacement> <token>@@client.verificaService.address@@</token> <value>${client.verificaService.address}</value> </replacement>
+						<replacement> <token>@@userVerifica@@</token> <value>${userVerifica}</value> </replacement>
+						<replacement> <token>@@passVerificav</token> <value>${passVerifica}</value> </replacement>
+						<replacement> <token>@@client.delegaService.address@@</token> <value>${client.delegaService.address}</value> </replacement>
+						<replacement> <token>@@userDelega@@</token> <value>${userDelega}</value> </replacement>
+						<replacement> <token>@@passDelega@@</token> <value>${passDelega}</value> </replacement>
+						<replacement> <token>@@client.consensoINIExtServices.address@@</token> <value>${client.consensoINIExtServices.address}</value> </replacement>
+						<replacement> <token>@@userConsensoIni@@</token> <value>${userConsensoIni}</value> </replacement>
+						<replacement> <token>@@passConsensoIni@@</token> <value>${passConsensoIni}</value> </replacement>
+						<replacement> <token>@@client.scaricoStudiWSBean.address@@</token> <value>${client.scaricoStudiWSBean.address}</value> </replacement>
+						<replacement> <token>@@userScaricoStudi@@</token> <value>${userScaricoStudi}</value> </replacement>
+						<replacement> <token>@@passScaricoStudi@@</token> <value>${passScaricoStudi}</value> </replacement>
+						
+					</replacements> 
+				</configuration> 
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Dependencies>jdk.unsupported</Dependencies>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- cxf-codegen-plugin -->
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<dependencies>
+					<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+					<dependency>
+						<groupId>javax.xml.bind</groupId>
+						<artifactId>jaxb-api</artifactId>
+						<version>2.3.1</version>
+					</dependency>
+					<!-- https://mvnrepository.com/artifact/javax.xml.ws/jaxws-api -->
+					<dependency>
+						<groupId>javax.xml.ws</groupId>
+						<artifactId>jaxws-api</artifactId>
+						<version>2.1</version>
+					</dependency>
+					<!-- https://mvnrepository.com/artifact/javax.jws/javax.jws-api -->
+					<dependency>
+						<groupId>javax.jws</groupId>
+						<artifactId>javax.jws-api</artifactId>
+						<version>1.1</version>
+					</dependency>
+					<!-- https://mvnrepository.com/artifact/com.sun.xml.messaging.saaj/saaj-impl -->
+					<dependency>
+						<groupId>com.sun.xml.messaging.saaj</groupId>
+						<artifactId>saaj-impl</artifactId>
+						<version>1.3.28</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${project.basedir}/src/main/java</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${project.basedir}/src/main/resources/wsdl/UtilityService.wsdl</wsdl>
+									<wsdlLocation>classpath:wsdl/UtilityService.wsdl</wsdlLocation>
+									<extraargs>
+										<extraarg>-p</extraarg>
+										<extraarg>it.csi.dmass.client.utilityService</extraarg>
+									</extraargs>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${project.basedir}/src/main/resources/wsdl/ScaricoStudiWSBean.wsdl</wsdl>
+									<wsdlLocation>classpath:wsdl/ScaricoStudiWSBean.wsdl</wsdlLocation>
+									<extraargs>
+										<extraarg>-p</extraarg>
+										<extraarg>it.csi.dmass.client.ScaricoStudiWSBean</extraarg>
+									</extraargs>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${project.basedir}/src/main/resources/wsdl/CCConsensoINIExtService.wsdl</wsdl>
+									<wsdlLocation>classpath:wsdl/CCConsensoINIExtService.wsdl</wsdlLocation>
+									<extraargs>
+										<extraarg>-p</extraarg>
+										<extraarg>it.csi.dmass.client.CCConsensoINIExtService</extraarg>
+									</extraargs>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${project.basedir}/src/main/resources/wsdl/VerificaService.wsdl</wsdl>
+									<wsdlLocation>classpath:wsdl/VerificaService.wsdl</wsdlLocation>
+									<extraargs>
+										<extraarg>-p</extraarg>
+										<extraarg>it.csi.dmass.client.verificaService</extraarg>
+									</extraargs>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${project.basedir}/src/main/resources/wsdl/DelegaService.wsdl</wsdl>
+									<wsdlLocation>classpath:wsdl/DelegaService.wsdl</wsdlLocation>
+									<extraargs>
+										<extraarg>-client</extraarg>
+										<extraarg>-verbose</extraarg>
+										<extraarg>-p</extraarg>
+										<extraarg>http://dmacc.csi.it/=it.csi.dmass.client.delegaService.dmacc</extraarg>
+										<extraarg>-p</extraarg>
+										<extraarg>http://dma.csi.it/=it.csi.dmass.client.delegaService.dma</extraarg>
+									</extraargs>
+								</wsdlOption>
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <configuration>
+	                <source>1.8</source>
+	                <target>1.8</target>
+	            </configuration>
+	        </plugin>
+	    	<plugin>
+	  			<groupId>org.apache.maven.plugins</groupId>
+	  			<artifactId>maven-site-plugin</artifactId>
+	  			<version>3.11.0</version>
+			</plugin>
+	    </plugins>
+	</build>
+	<reporting>
+    <plugins>
+		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-project-info-reports-plugin</artifactId>
+  			<version>3.0.0</version>
+		</plugin>
+    	<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-surefire-report-plugin</artifactId>
+  			<version>3.0.0-M5</version>
+		</plugin>
+        <plugin>
+        	<groupId>org.apache.maven.plugins</groupId>
+        	<artifactId>maven-javadoc-plugin</artifactId>
+        	<version>3.3.2</version>
+        	<reportSets>
+          		<reportSet><!-- by default, id = "default" -->
+            		<reports><!-- select non-aggregate reports -->
+              			<report>javadoc</report>
+              			<report>test-javadoc</report>
+            		</reports>
+          		</reportSet>
+          	<reportSet><!-- aggregate reportSet, to define in poms having modules -->
+            <id>aggregate</id>
+            <inherited>false</inherited><!-- don't run aggregate in child modules -->
+            <reports>
+              <report>aggregate</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>

@@ -1,0 +1,10 @@
+<jboss-deployment-structure>
+ <deployment>
+  <!-- exclude-subsystem prevents a subsystems deployment unit processors running on a deployment -->
+  <!-- which gives basically the same effect as removing the subsystem, but it only affects single deployment -->
+  	<exclusions>
+      <module name='org.slf4j'/>
+      <module name='org.slf4j.impl'/>
+    </exclusions>
+ </deployment>
+</jboss-deployment-structure>
