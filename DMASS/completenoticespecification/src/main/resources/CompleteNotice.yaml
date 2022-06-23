@@ -1,0 +1,66 @@
+swagger: '2.0'
+info:
+  description: Portale FSE -  CSI
+  version: '1.0'
+  title: IMR-PDI RESTful Web Service documentation
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+host: localhost:8080
+securityDefinitions:
+  basicAuth:
+    type: basic
+basePath: /
+tags:
+  - name: complete-notice-controller
+    description: CompleteNotice Controller
+paths:
+  /CompleteNotice:
+    post:
+      security:
+        - basicAuth: []
+      tags:
+        - complete-notice-controller
+      summary: CompleteNotice
+      description: Servizio REST per gestione notifica completamento elaborazione JOB IHE-PDI
+      operationId: completeNotice
+      parameters:
+        - name: zipName
+          in: query
+          description: Nome del pacchetto zip 
+          required: true
+          type: string
+        - name: jobUID
+          in: query
+          description: Identificativo univoco del JOB
+          required: true
+          type: string
+        - name: status
+          in: query
+          description: Stato della generazione del pacchetto (SUCCESS, ERROR)
+          required: true
+          type: string
+        - name: requestID
+          in: query
+          description: ID inviato dal client associato alla richiesta di elaborazione JOB
+          required: false
+          type: string
+        - name: checksum
+          in: query
+          description: Checksum del pacchetto zip generato
+          required: false
+          type: string
+        - name: dist
+          in: query
+          description: Directory dove viene depositato il pacchetto zip generato
+          required: false
+          type: string
+        - name: codeError
+          in: query
+          description: Contiene il codice errore in caso di notifica su JOB fallito
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+      deprecated: false

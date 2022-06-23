@@ -1,0 +1,9 @@
+client:
+  ticketagent:
+    address: http://localhost:8080/scaricoStudi/ws/scaricoStudiWSBean
+
+server:
+  port: 8080
+
+cxf:
+  path: /scaricoStudi/ws

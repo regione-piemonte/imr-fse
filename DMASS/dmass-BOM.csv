@@ -1,0 +1,119 @@
+name@version *,license *,copyrights *,end-of-support,dependencies,language,repository,email,URL
+asm-5.2.jar,"BSD",-,-,-,Java,-,-,-
+classmate-1.3.4.jar,"Apache-2.0",-,-,-,Java,-,-,-
+commons-beanutils-1.9.3.jar,"Apache-2.0",-,-,-,Java,-,-,-
+commons-collections-3.2.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+commons-io-2.11.0.jar,"Apache-2.0",-,-,-,Java,-,-,-
+commons-lang3-3.12.0.jar,"Apache-2.0",-,-,-,Java,-,-,-
+cxf-core-3.2.1.jar,"Apache-2.0",-,-,-,Java,-,-,-
+hibernate-validator-5.3.6.Final.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-annotations-2.8.0.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-core-2.8.10.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-databind-2.8.10.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jboss-logging-3.3.1.Final.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jcl-over-slf4j-1.7.25.jar,"MIT",-,-,-,Java,-,-,-
+jul-to-slf4j-1.7.25.jar,"MIT",-,-,-,Java,-,-,-
+log4j-over-slf4j-1.7.25.jar,"Apache-2.0",-,-,-,Java,-,-,-
+logback-core-1.1.11.jar,"EPL-1.0;LGPL-2.1",-,-,-,Java,-,-,-
+neethi-3.1.0.jar,"Apache-2.0",-,-,-,Java,-,-,-
+postgresql-9.4.1212.jre7.jar,"PostgreSQL",-,-,-,Java,-,-,-
+slf4j-api-1.7.25.jar,"MIT",-,-,-,Java,-,-,-
+snakeyaml-1.17.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-boot-1.5.9.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-core-4.3.13.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-tx-4.3.13.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+stax2-api-3.1.4.jar,"BSD-2-Clause",-,-,-,Java,-,-,-
+tomcat-annotations-api-8.5.23.jar,"Apache-2.0",-,-,-,Java,-,-,-
+tomcat-embed-core-8.5.23.jar,"Apache-2.0",-,-,-,Java,-,-,-
+tomcat-embed-el-8.5.23.jar,"Apache-2.0",-,-,-,Java,-,-,-
+validation-api-1.1.0.Final.jar,"Apache-2.0",-,-,-,Java,-,-,-
+woodstox-core-5.0.3.jar,"Apache-2.0",-,-,-,Java,-,-,-
+wsdl4j-1.6.3.jar,"CPL-1.0",-,-,-,Java,-,-,-
+xml-resolver-1.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+xmlschema-core-2.2.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+ScaricoStudiWSBean-0.0.1-SNAPSHOT.war,"Apache-2.0; MIT (Rilasciata da CSI Piemonte su richiesta)",CSI-Piemonte,-,-,Java,-,-,-
+accessors-smart-1.1.jar,"Apache-2.0",-,-,-,Java,-,-,-
+activation-1.1.jar,"CDDL-1.0",-,-,-,Java,-,-,-
+android-json-0.0.20131108.vaadin1.jar,"Apache-2.0",-,-,-,Java,-,-,-
+aopalliance-repackaged-2.5.0-b32.jar,"CDDL-1.1;GPL-2.0",-,-,-,Java,-,-,-
+asm-5.0.3.jar,"BSD",-,-,-,Java,-,-,-
+assertj-core-2.6.0.jar,"Apache-2.0",-,-,-,Java,-,-,-
+byte-buddy-1.8.12.jar,"Apache-2.0",-,-,-,Java,-,-,-
+commons-codec-1.10.jar,"Apache-2.0",-,-,-,Java,-,-,-
+commons-httpclient-3.1.jar,"Apache-2.0",-,-,-,Java,-,-,-
+commons-io-1.4.jar,"Apache-2.0",-,-,-,Java,-,-,-
+commons-logging-1.0.4.jar,"Apache-2.0",-,-,-,Java,-,-,-
+completenoticespecification-0.0.1-SNAPSHOT.jar,"Apache-2.0; MIT (Rilasciata da CSI Piemonte su richiesta)",CSI-Piemonte,-,-,Java,-,-,-
+guava-20.0.jar,"Apache-2.0",-,-,-,Java,-,-,-
+hamcrest-core-1.3.jar,"BSD-3-Clause",-,-,-,Java,-,-,-
+hamcrest-library-1.3.jar,"BSD-3-Clause",-,-,-,Java,-,-,-
+hk2-api-2.5.0-b32.jar,"CDDL-1.1;GPL-2.0",-,-,-,Java,-,-,-
+hk2-locator-2.5.0-b32.jar,"CDDL-1.1;GPL-2.0",-,-,-,Java,-,-,-
+hk2-utils-2.5.0-b32.jar,"CDDL-1.1;GPL-2.0",-,-,-,Java,-,-,-
+httpclient-4.5.8.jar,"Apache-2.0",-,-,-,Java,-,-,-
+httpcore-4.4.11.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-core-2.8.11.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-core-asl-1.9.9.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-databind-2.8.11.3.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-datatype-joda-2.8.11.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-datatype-threetenbp-2.6.4.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-jaxrs-base-2.8.11.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-jaxrs-json-provider-2.8.11.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-mapper-asl-1.9.9.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-module-jaxb-annotations-2.8.11.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jackson-xc-1.9.9.jar,"Apache-2.0",-,-,-,Java,-,-,-
+javassist-3.12.1.GA.jar,"MPL-1.1;LGPL-2.1",-,-,-,Java,-,-,-
+javassist-3.21.0-GA.jar,"MPL-1.1; LGPL-2.1; Apache-2.0",-,-,-,Java,-,-,-
+javax.annotation-api-1.2.jar,"CDDL-1.1;GPL-2.0 w/CPE",-,-,-,Java,-,-,-
+javax.inject-2.5.0-b32.jar,"CDDL-1.1;GPL-2.0",-,-,-,Java,-,-,-
+javax.ws.rs-api-2.0.1.jar,"CDDL-1.1;GPL-2.0 w/CPE",-,-,-,Java,-,-,-
+jaxb-api-2.2.3.jar,"CDDL-1.1;GPL-2.0 w/CPE",-,-,-,Java,-,-,-
+jaxb-impl-2.2.4.jar,"CDDL-1.1;GPL-2.0 w/CPE",-,-,-,Java,-,-,-
+jaxrs-api-2.3.6.Final.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jboss-logging-3.3.2.Final.jar,"Apache-2.0",Redhat,-,-,Java,-,-,-
+jcip-annotations-1.0.jar,"Public Domain",-,-,-,Java,-,-,-
+jcl-over-slf4j-1.7.26.jar,"MIT",-,-,-,Java,-,-,-
+jersey-guava-2.25.1.jar,"CDDL; GPL-1.1",-,-,-,Java,-,-,-
+jettison-1.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+joda-time-2.9.9.jar,"Apache-2.0",-,-,-,Java,-,-,-
+json-path-2.2.0.jar,"Apache-2.0",-,-,-,Java,-,-,-
+json-smart-2.2.1.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jsonassert-1.4.0.jar,"Apache-2.0",-,-,-,Java,-,-,-
+jsr250-api-1.0.jar,"CDDL-1.1",-,-,-,Java,-,-,-
+jul-to-slf4j-1.7.26.jar,"MIT",-,-,-,Java,-,-,-
+junit-4.12.jar,"EPL-1.0",-,-,-,Java,-,-,-
+log4j-1.2.14.jar,"Apache-2.0",-,-,-,Java,-,-,-
+log4j-over-slf4j-1.7.26.jar,"Apache-2.0",-,-,-,Java,-,-,-
+mapstruct-1.2.0.Final.jar,"Apache-2.0",-,-,-,Java,-,-,-
+migbase64-2.2.jar,"BSD",-,-,-,Java,-,-,-
+mimepull-1.9.6.jar,"CDDL-1.1;GPL-2.0 w/CPE",-,-,-,Java,-,-,-
+mockito-core-1.10.19.jar,"MIT",-,-,-,Java,-,-,-
+objenesis-2.1.jar,"Apache-2.0",-,-,-,Java,-,-,-
+osgi-resource-locator-1.0.1.jar,"CDDL-1.1;GPL-2.0",-,-,-,Java,-,-,-
+resteasy-jackson-provider-2.3.6.Final.jar,"Apache-2.0",-,-,-,Java,-,-,-
+resteasy-jaxb-provider-2.2.1.GA.jar,"Apache-2.0",-,-,-,Java,-,-,-
+resteasy-jaxrs-2.3.6.Final.jar,"Apache-2.0",-,-,-,Java,-,-,-
+resteasy-jettison-provider-2.2.1.GA.jar,"Apache-2.0",-,-,-,Java,-,-,-
+resteasy-spring-2.2.1.GA.jar,"Apache-2.0",-,-,-,Java,-,-,-
+scannotation-1.0.3.jar,"Apache-2.0",-,-,-,Java,-,-,-
+servlet-api-2.5.jar,"CDDL-1.0; GPL-2.0",-,-,-,Java,-,-,-
+sjsxp-1.0.1.jar,"CDDL-1.0; GPL-2.0",-,-,-,Java,-,-,-
+slf4j-api-1.7.26.jar,"MIT",-,-,-,Java,-,-,-
+spring-boot-1.5.21.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-boot-test-1.5.21.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-core-4.3.24.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-plugin-core-1.2.0.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-test-4.3.24.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-tx-4.3.24.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+springfox-core-2.9.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+springfox-schema-2.9.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+springfox-spi-2.9.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+springfox-spring-web-2.9.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+springfox-swagger-common-2.9.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+springfox-swagger-ui-2.9.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+springfox-swagger2-2.9.2.jar,"Apache-2.0",-,-,-,Java,-,-,-
+stax-api-1.0.jar,"CDDL-1.1;GPL-2.0",-,-,-,Java,-,-,-
+swagger-annotations-1.5.22.jar,"Apache-2.0",-,-,-,Java,-,-,-
+swagger-models-1.5.20.jar,"Apache-2.0",-,-,-,Java,-,-,-
+threetenbp-1.3.8.jar,"BSD-3-clause",-,-,-,Java,-,-,-
+dmasssrv.war,"Apache-2.0; MIT (Rilasciata da CSI Piemonte su richiesta)",CSI-Piemonte,-,-,Java,-,-,-
