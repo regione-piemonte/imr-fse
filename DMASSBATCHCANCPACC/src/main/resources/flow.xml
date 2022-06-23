@@ -1,0 +1,10 @@
+<flows>
+	<flow>
+	<tasks>
+	<task>it.csi.dmass.dmassbatchcancpacc.run.command.LogInizioCancellazione</task>
+	<task>it.csi.dmass.dmassbatchcancpacc.run.command.VerificaBatchInEsecuzione</task>
+	<task>it.csi.dmass.dmassbatchcancpacc.run.command.CancellaPacchetti</task>
+	<task>it.csi.dmass.dmassbatchcancpacc.run.command.LogFineCancellazione</task>
+	</tasks>
+	</flow>
+</flows>

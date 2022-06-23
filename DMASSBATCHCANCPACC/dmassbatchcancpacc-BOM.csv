@@ -1,0 +1,14 @@
+name@version*,license*,copyrights*,end-of-support,dependencies,language,repository,email,URL
+httpclient-4.5.3.jar,"Apache-2.0",The Apache Foundation,-,-,Java,-,-,-
+commons-codec-1.10.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-jdbc-5.0.6.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-context-5.0.6.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-core-5.0.6.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+spring-webmvc-5.0.6.RELEASE.jar,"Apache-2.0",-,-,-,Java,-,-,-
+postgresql-42.2.18.jar,"BSD-2-Clause",-,-,-,Java,-,-,-
+log4j-1.2.14.jar,"Apache-2.0",-,-,-,Java,-,-,-
+cxf-spring-boot-starter-jaxws-3.2.1.jar,"Apache-2.0",Apache Software Foundation,-,-,Java,-,-,-
+cxf-codegen-plugin-3.2.1.jar,"Apache-2.0",Apache Software Foundation,-,-,Java,-,-,-
+wss4j-2.0.0.jar,"Apache-2.0",Redhat,-,-,Java,-,-,-
+cxf-rt-ws-security-3.2.1.jar,"Apache-2.0",Apache Software Foundation,-,-,Java,-,-,-
+cxf-rt-features-logging-3.2.1.jar,"Apache-2.0",Apache Software Foundation,-,-,Java,-,-,-
