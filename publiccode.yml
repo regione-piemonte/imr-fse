@@ -1,0 +1,90 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+categories:
+  - data-visualization
+dependsOn:
+  open:
+    - name: Apache httpd
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: ''
+    - name: RedHat JBOSS
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: ''
+  proprietary:
+    - name: Oracle
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: ''
+description:
+  it:
+    features:
+      - |-
+        Sistema software per gestione delle immagini radiologiche dei referti
+        radiologici del FSE
+    genericName: imr-fse
+    longDescription: |2
+       Il prodotto _**Immagini in Rete del FSE**_ realizza un sistema software per consentire al FSE (Fascicolo Sanitario Elettronico) di rendere disponibili a cittadini e operatori sanitari, laddove previsto in ottemperanza alla normativa specifica in materia di FSE, un pacchetto compresso ZIP contenente le immagini radiologiche associate ai referti di radiologia. 
+
+        Il pacchetto zip è conforme allo standard IHE-PDI e contiene:
+
+      - Immagini DICOM ad alta risoluzione
+
+      - Eventuale viewer ad alta risoluzione eseguibile su PC
+
+      - Immagini JPEG a bassa risoluzione
+
+      - Viewer HTML per le immagini a bassa risoluzione
+
+      - File accessori (dicomdir, readme, etc).
+    shortDescription: |-
+      Sistema software per gestione delle immagini radiologiche dei referti
+      radiologici del FSE
+developmentStatus: stable
+intendedAudience:
+  scope:
+    - healthcare
+    - government
+it:
+  conforme:
+    gdpr: true
+    lineeGuidaDesign: true
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+  riuso:
+    codiceIPA: r_piemon
+landingURL: 'https://github.com/regione-piemonte/imr-fse.git'
+legal:
+  authorsFile: |-
+    https://raw.githubusercontent.com/regione-piemonte/imr-fse/master/COPYRIGHTS.txt
+  license: LGPL-2.0-only
+  mainCopyrightOwner: Regione Piemonte
+localisation:
+  availableLanguages:
+    - it
+  localisationReady: false
+maintenance:
+  contacts:
+    - email: yvonne.carpegna@csi.it
+      name: Yvonne Carpegna
+  type: internal
+name: Immagini in Rete del FSE
+platforms:
+  - web
+releaseDate: '2022-06-10'
+softwareType: standalone/web
+softwareVersion: 2.0.0
+url: 'https://github.com/regione-piemonte/imr-fse'
