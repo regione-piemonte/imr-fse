@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 8, 2009 10:08:09 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping default-lazy="false">
+ <class name="it.units.htl.maps.Studies" table="Studies">
+  <id name="studyInstanceUid" type="string">
+   <column length="64" name="studyInstanceUID"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="studyId" type="string">
+   <column length="64" name="studyID"/>
+  </property>
+  <property generated="never" lazy="false" name="studyStatusId" type="string">
+   <column length="16" name="studyStatusID"/>
+  </property>
+  <property generated="never" lazy="false" name="studyDate" type="date">
+   <column length="0" name="studyDate"/>
+  </property>
+  <property generated="never" lazy="false" name="studyTime" type="time">
+   <column length="0" name="studyTime"/>
+  </property>
+  <property generated="never" lazy="false" name="studyCompletionDate" type="date">
+   <column length="0" name="studyCompletionDate"/>
+  </property>
+  <property generated="never" lazy="false" name="studyCompletionTime" type="time">
+   <column length="0" name="studyCompletionTime"/>
+  </property>
+  <property generated="never" lazy="false" name="studyVerifiedDate" type="date">
+   <column length="0" name="studyVerifiedDate"/>
+  </property>
+  <property generated="never" lazy="false" name="studyVerifiedTime" type="time">
+   <column length="0" name="studyVerifiedTime"/>
+  </property>
+  <property generated="never" lazy="false" name="accessionNumber" type="string">
+   <column length="16" name="accessionNumber"/>
+  </property>
+  <property generated="never" lazy="false" name="studyDescription" type="string">
+   <column length="64" name="studyDescription"/>
+  </property>
+  <property generated="never" lazy="false"
+   name="procedureCodeSequenceFk" type="java.lang.Long">
+   <column name="procedureCodeSequenceFK"/>
+  </property>
+  <property generated="never" lazy="false"
+   name="referringPhysiciansName" type="string">
+   <column length="64" name="referringPhysiciansName"/>
+  </property>
+  <property generated="never" lazy="false"
+   name="admittingDiagnosesDescription" type="string">
+   <column length="64" name="admittingDiagnosesDescription"/>
+  </property>
+  <property generated="never" lazy="false" name="studyStatus" type="java.lang.Character">
+   <column length="1" name="studyStatus"/>
+  </property>
+  <property generated="never" lazy="false" name="studySize" type="java.lang.Long">
+   <column name="studySize"/>
+  </property>
+  <property generated="never" lazy="false" name="fastestAccess" type="string">
+   <column length="128" name="fastestAccess"/>
+  </property>
+  <!--  <property generated="never" lazy="false" name="patientFk" type="java.lang.Long">
+   <column name="patientFK"/>
+  </property>-->
+  <property generated="never" lazy="false" name="deprecated" type="java.lang.Boolean">
+   <column name="deprecated"/>
+  </property>
+  <property generated="never" lazy="false" name="reconcile" type="java.lang.Boolean">
+   <column name="toReconcile"/>
+  </property>
+  <property generated="never" lazy="false"
+   name="numberOfStudyRelatedSeries" type="integer" update="true">
+   <column name="numberOfStudyRelatedSeries" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false"
+   name="numberOfStudyRelatedInstances" type="short">
+   <column name="numberOfStudyRelatedInstances" not-null="true"/>
+  </property>
+  <many-to-one class="it.units.htl.maps.Patients" column="patientFk"
+   name="patients" not-null="true" unique="true"/>
+  <set batch-size="10" fetch="join" lazy="false" name="series" sort="unsorted">
+   <key column="studyFk"/>
+   <one-to-many class="it.units.htl.maps.Series"/>
+  </set>
+  <one-to-one class="it.units.htl.maps.WlpatientDataPerVisit" name="WlpatientDataPerVisits"  property-ref="studyFk" />
+  
+  <!-- <many-to-one name="WlpatientDataPerVisits" class="it.units.htl.maps.WlpatientDataPerVisit" fetch="join" foreign-key="studyFk"/> 
+ 
+  <set inverse="false" lazy="false" name="WlpatientDataPerVisits" sort="unsorted">
+   <key column="studyFk"/>
+   <one-to-many class="it.units.htl.maps.WlpatientDataPerVisit" embed-xml="false"/>
+  </set> 
+  <property generated="never" lazy="true" name="toReconcile"
+   type="byte" update="true">
+   <column name="toReconcile" not-null="true"/>
+  </property> 
+  <property generated="never" lazy="true" name="mergedByPatientId" type="string">
+   <column length="64" name="mergedByPatientId"/>
+  </property>-->
+ </class>
+</hibernate-mapping>

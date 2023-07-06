@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<results>
+    <patient patientID="1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.3.0" lastName="DOE" middleName="" firstName="JANE" birthDate="">
+        <study uid="1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.3.0" date="2007-11-30" time="14:29:23" description="CT CHEST W/O CONTRAST">
+            <series uid="1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.4.0" modality="CT">
+                <instance uid="1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.6.0" number="2" wadourl="http://192.168.24.65:7080/o3-dpacs-wado/wado?requestType=WADO&amp;studyUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.3.0&amp;seriesUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.4.0&amp;objectUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.6.0" numberOfFrames="1" windowCenter="50" windowWidth="500" rows="642" columns="888" imagePositionPatientX="-265.000" imagePositionPatientY="0.000" imagePositionPatientZ="0.000" photometricInterpretation="MONOCHROME2" bitPerPixel="16" rescaleSlope="1" rescaleIntercept="-1024" transferSyntax="1.2.840.10008.1.2.1" imageQuality="75" contentType="image/jpeg">
+                    <pixelSpacing rowSpacing="0.545455" columnSpacing="0.596847"/>
+                </instance>
+                <instance uid="1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.2.0" number="1" wadourl="http://192.168.24.65:7080/o3-dpacs-wado/wado?requestType=WADO&amp;studyUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.3.0&amp;seriesUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.4.0&amp;objectUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.2.0" numberOfFrames="1" windowCenter="50" windowWidth="500" rows="642" columns="888" imagePositionPatientX="-0.000" imagePositionPatientY="265.000" imagePositionPatientZ="0.000" photometricInterpretation="MONOCHROME2" bitPerPixel="16" rescaleSlope="1" rescaleIntercept="-1024" transferSyntax="1.2.840.10008.1.2.1" imageQuality="75" contentType="image/jpeg">
+                    <pixelSpacing rowSpacing="0.545455" columnSpacing="0.596847"/>
+                </instance>
+            </series>
+        </study>
+    </patient>
+</results>
+
+http://192.168.24.65:7080/o3-dpacs-wado/wado?requestType=WADO&studyUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.571.0&seriesUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.638.0&objectUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.645.0&contentType=image/jpeg&imageQuality=75

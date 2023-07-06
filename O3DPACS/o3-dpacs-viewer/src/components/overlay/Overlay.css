@@ -1,0 +1,103 @@
+.OverlayGroup {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    border: none;
+  }
+  .DivHidden { 
+    display: none; 
+  }
+  .OverlayGroupItem {
+    background-color: transparent;
+    border: none;
+    color: gray;
+    pointer-events: none;
+    position: absolute;
+  }
+  .TopLeft {
+    width: 48%;
+    height: 48%;
+    top: 0px;
+    left: 0px;
+    text-align: left;
+  }
+  .TopRight {
+    width: 48%;
+    height: 48%;
+    top: 0px;
+    right: 0px;
+    text-align: right;
+  }
+  .BottomRight {
+    width: 48%;
+    height: 48%;
+    bottom: 0px;
+    right: 0px;
+    color: gray;
+    text-align: right;
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .BottomLeft {
+    border: none;
+    width: 48%;
+    height: 48%;
+    bottom: 0px;
+    left: 0px;
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: left;
+  }
+  .BottomCenter {
+    bottom: 3px;
+    width:50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  
+  .Text {
+    /*max-height: 100%;*/
+    font-size: auto;
+    white-space: nowrap;      /*keep text on one line */
+    overflow: hidden;         /*prevent text from being shown outside the border */
+    text-overflow: ellipsis;  /*cut off text with an ellipsis*/
+  }
+  .UpperTextDiv {
+    height: 100%;
+  }
+  .LeftUpperList {
+    padding: 0px;
+    margin: 3px;
+  }
+  .RightUpperList {
+    padding: 0px;
+    margin: 3px;
+  }
+  .LeftBottomList {
+    padding: 0px;
+    margin: 3px;
+  }
+  .RightBottomList {
+    padding: 0px;
+    margin: 3px;
+  }
+  
+  .BottomTextDiv {
+    bottom: 0px;
+    position: absolute;
+    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Orientation */
+  .OrientationOverlay {
+    pointer-events: none;
+    font-weight: 100;
+  }
+  

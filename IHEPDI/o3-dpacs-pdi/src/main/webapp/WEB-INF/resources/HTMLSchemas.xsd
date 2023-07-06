@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="DICOM_VIEWER_DATA">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" maxOccurs="unbounded" name="CSS">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="STYLE" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="1" maxOccurs="unbounded" name="JS">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="JAVASCRIPT" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="INDEX" type="INDEX_TYPE" />                  
+                <xs:element name="TOC" type="TYPE_TOC" />                
+                <xs:element name="STUDIES">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="STUDY" maxOccurs="unbounded" type="STUDY_TYPE"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="INDEX_TYPE">
+        <xs:sequence>
+            <xs:element type="xs:string" maxOccurs="1" name="URI_FILE"/>
+            <xs:element type="xs:string" maxOccurs="1" name="PATH_FIRST_STUDY"/>
+            <xs:element type="xs:string" maxOccurs="1" name="PATH_FIRST_SERIES"/>
+            <xs:element type="xs:string" maxOccurs="1" name="PATH_FIRST_IMG"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="HOME_TYPE">
+        <xs:sequence>
+            <xs:element type="xs:string" maxOccurs="1" name="URI_FILE"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SELECT_TYPE">
+        <xs:sequence>
+            <xs:element type="xs:string" maxOccurs="1" name="URI_FILE"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TYPE_TOC">
+        <xs:sequence>
+            <xs:element type="xs:string" maxOccurs="1" name="URI_FILE"/>
+            <xs:element name="LINK_STUDY_FOR_TOC" maxOccurs="unbounded" >
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="URI" />
+                        <xs:element type="xs:string" name="STUDY_DESCRIPTION" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>                            
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="STUDY_TYPE">
+        <xs:sequence>
+            <xs:element type="xs:string" name="URI_FILE" />
+            <xs:element type="xs:string" name="STUDY_DESCRIPTION" />
+            <xs:element name="LIST_SERIES">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="SERIES" type="SERIES_TYPE" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SERIES_TYPE">
+        <xs:sequence>
+            <xs:element type="xs:string" name="URI"/>
+            <xs:element type="xs:string" name="URI_FILE"/>
+            <xs:element type="xs:string" name="SERIES_NUMBER"/>
+            <xs:element type="xs:string" name="SERIES_DESC"/>
+            <xs:element type="xs:string" name="STUDY_NUMBER"/>
+            <xs:element type="xs:string" name="FIRST_OBJECT"/>
+            <xs:element type="xs:string" name="LAST_OBJECT"/>
+            <xs:element type="xs:string" name="MODALITY"/>
+            <xs:element name="LIST_OBJECT" >
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="OBJECT" type="OBJECT_TYPE" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OBJECT_TYPE">
+        <xs:sequence>
+            <xs:element type="xs:string" name="URI" minOccurs="0"/>
+            <xs:element type="xs:string" name="URI_FILE" minOccurs="0"/>
+            <xs:element type="xs:string" name="URI_IMG" minOccurs="0"/>
+            <xs:element type="xs:string" name="OBJECT_NAME" minOccurs="0"/>
+            <xs:element type="xs:int" name="OBJECT_INDEX" minOccurs="0"/>
+            <xs:element type="xs:int" name="NUM_OBJECT" minOccurs="0"/>
+            <xs:element type="xs:string" name="NEXT_OBJECT" minOccurs="0"/>
+            <xs:element type="xs:string" name="PREV_OBJECT" minOccurs="0"/>
+            <xs:element type="xs:string" name="STUDY_NUMBER" minOccurs="0"/>
+            <xs:element type="xs:string" name="SERIES_NUMBER" minOccurs="0"/>
+            <xs:element type="xs:string" name="SERIES_DESC" minOccurs="0"/>
+            <xs:element type="xs:string" name="PHONOMETRIC" minOccurs="0"/>
+            <xs:element type="xs:string" name="SPACING" minOccurs="0"/>
+            <xs:element type="xs:string" name="SIZE" minOccurs="0"/>
+            <xs:element type="xs:int" name="NUMBER_FRAMES" minOccurs="0"/>
+            <xs:element type="xs:int" name="ROW" minOccurs="0"/>
+            <xs:element type="xs:int" name="COLUMN" minOccurs="0"/>
+            <xs:element name="PATIENT" type="PATIENT_TYPE" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PATIENT_TYPE">
+        <xs:sequence>
+            <xs:element type="xs:string" name="PATIENT_ID"></xs:element>
+            <xs:element type="xs:string" name="PATIENT_FIRST_NAME"></xs:element>
+            <xs:element type="xs:string" name="PATIENT_MIDDLE_NAME"></xs:element>
+            <xs:element type="xs:string" name="PATIENT_LAST_NAME"></xs:element>
+            <xs:element type="xs:string" name="PATIENT_BIRTH_DAY"></xs:element>
+            <xs:element type="xs:string" name="STUDY_DESCRIPTION"></xs:element>
+            <xs:element type="xs:string" name="ACCESSION_NUMBER"></xs:element>
+            <xs:element type="xs:string" name="SERIES_DESC"></xs:element>
+            <xs:element type="xs:string" name="URI_IMG" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

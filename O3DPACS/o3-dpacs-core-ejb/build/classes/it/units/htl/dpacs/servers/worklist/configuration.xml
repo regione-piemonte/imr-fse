@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <!--  this file is loaded if the configuration is not avaiable on the DB and if service is running without any AS -->
+    <!-- the port where WorklistService listen -->
+    <servicePort>105</servicePort>
+    <!-- max number of clients connected -->
+    <maxClients>10</maxClients>
+    <!-- the timeout of the request -->
+    <rqTimeout>5000</rqTimeout>
+    <!-- timeout of DimSe -->
+    <dimSeTimeOut>0</dimSeTimeOut>
+    <!-- Socket Close Delay -->
+    <soCloseDelay>500</soCloseDelay>
+    <!-- -->
+    <packPDVs>false</packPDVs>
+    <MaxPDULength>16352</MaxPDULength>
+    <AsyncOpsWindow>0,1</AsyncOpsWindow>
+    <!-- The name of the View in the datasource -->
+    <viewName>vwworklist</viewName>
+    <CalledAETs>03-DPACS;O3-DPACS;MAC-DPACS;LOCAL-DPACS;NRX_CTN_LTA;AE_SVR_CIS</CalledAETs>
+    <CallingAETs>any</CallingAETs>
+    
+    <!--  The name of the view fiel that provide n unique row identifier -->
+    <uniqueField>AccessionNumber</uniqueField>
+    <!-- this part is ignored if the service is running on AS -->
+	<!-- connection string to the db -->
+	<connectionString>jdbc:mysql://localhost:3306/Ultimate</connectionString>
+	<!-- userName for DB Connection -->
+	<dbUser>o3-dpacs</dbUser>
+	<!-- password for DB Connection -->
+	<dbPassword>o3-abc-123</dbPassword>
+	<!-- JdbcDriver -->
+	<jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>    
+	
+
+</root>

@@ -1,0 +1,75 @@
+{
+  "name": "html-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Allan Della Libera",
+    "email": "allan.dellalibera@exprivia.com",
+    "url": "https://www.exprivia.com"
+  },
+  "homepage": ".",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "bootstrap": "^4.5.3",
+    "chromedriver": "^87.0.4",
+    "classnames": "^2.2.6",
+    "cra-template": "1.0.3",
+    "detect-browser": "^5.2.0",
+    "react": "^16.13.1",
+    "react-app-polyfill": "^2.0.0",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.13.1",
+    "react-resize-detector": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-spinners": "^0.9.0",
+    "react-split": "^2.0.9",
+    "screenfull": "^5.0.2",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^7.0.2",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "better-docs": "^2.3.2",
+    "cypress": "^6.1.0",
+    "docdash": "^1.2.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "http-proxy-middleware": "^1.0.6",
+    "jsdoc": "^3.6.6",
+    "testing-library": "^0.0.2",
+    "uglifyjs": "^2.4.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "test:e2e": "yarn cypress:run",
+    "cypress": "cypress open",
+    "cypress:run": "cypress run",
+    "doc": "yarn doc:build && yarn doc:open",
+    "doc:build": "jsdoc -c jsdoc.json README.md",
+    "doc:open": "docs/index.html"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "ignorePatterns": ["docs/*"]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "IE 11",
+      "not dead",
+      "not IE < 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "IE 11"
+    ]
+  }
+}

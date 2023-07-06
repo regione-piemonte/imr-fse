@@ -1,0 +1,51 @@
+2021-09-24 16:16:20.836 [main] INFO  main.MainToRunTest - Esecuzione dei test sulla servlet CreatePdi...
+2021-09-24 16:16:20.841 [main] INFO  test.CreatePdiTest - [CreatePdiTest.patientIsNotTheSameTest] -> Esecuzione test patientIsNotTheSameTest
+2021-09-24 16:16:20.841 [main] INFO  test.CreatePdiTest - [CreatePdiTest.getCreatePdiUrl] url: http://localhost:8080/o3-dpacs-pdi/CreatePdi?patientID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&azienda=NONE&studyUID=999.999.3859744,1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0
+2021-09-24 16:16:21.857 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> Code: 200 messCode: OK
+2021-09-24 16:16:21.864 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> response: Dati inviati... idIssuer NONE... azienda NONE... Il paziente non e' lo stesso
+2021-09-24 16:16:21.865 [main] INFO  test.CreatePdiTest - [CreatePdiTest.patientIsNotTheSameTest] -> Fine esecuzione test patientIsNotTheSameTest, esito: true
+2021-09-24 16:16:21.866 [main] INFO  main.MainToRunTest - Test #1: TEST PASSED
+2021-09-24 16:16:21.867 [main] INFO  test.CreatePdiTest - [CreatePdiTest.patientNotFoundTest] -> Esecuzione test patientNotFoundTest
+2021-09-24 16:16:21.867 [main] INFO  test.CreatePdiTest - [CreatePdiTest.getCreatePdiUrl] url: http://localhost:8080/o3-dpacs-pdi/CreatePdi?patientID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&azienda=NONE&studyUID=999.999.3859744&accessionNumber=T5F130865
+2021-09-24 16:16:35.480 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> Code: 200 messCode: OK
+2021-09-24 16:16:35.481 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> response: Dati inviati... idIssuer NONE... azienda NONE... Paziente non trovato
+2021-09-24 16:16:35.482 [main] INFO  test.CreatePdiTest - [CreatePdiTest.patientNotFoundTest] -> Fine esecuzione test patientNotFoundTest, esito: true
+2021-09-24 16:16:35.482 [main] INFO  main.MainToRunTest - Test #2: TEST PASSED
+2021-09-24 16:16:35.483 [main] INFO  test.CreatePdiTest - [CreatePdiTest.patientWasFoundTest] -> Esecuzione test patientWasFoundTest
+2021-09-24 16:16:35.483 [main] INFO  test.CreatePdiTest - [CreatePdiTest.getCreatePdiUrl] url: http://localhost:8080/o3-dpacs-pdi/CreatePdi?patientID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&azienda=NONE&studyUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&accessionNumber=T5F130866
+2021-09-24 16:20:19.882 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> Code: 200 messCode: OK
+2021-09-24 16:20:19.884 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> response: Dati inviati... idIssuer NONE... azienda NONE... Impossibile inviare notifica di completamento...  Paziente trovato
+2021-09-24 16:20:19.884 [main] INFO  test.CreatePdiTest - [CreatePdiTest.patientWasFoundTest] -> Fine esecuzione test patientWasFoundTest, esito: true
+2021-09-24 16:20:19.885 [main] INFO  main.MainToRunTest - Test #3: TEST PASSED
+2021-09-24 16:20:19.886 [main] INFO  test.CreatePdiTest - [CreatePdiTest.absentAccNumAndStudyUIDTest] -> Esecuzione test absentAccNumAndStudyUIDTest
+2021-09-24 16:20:19.886 [main] INFO  test.CreatePdiTest - [CreatePdiTest.getCreatePdiUrl] url: http://localhost:8080/o3-dpacs-pdi/CreatePdi?patientID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&azienda=NONE
+2021-09-24 16:20:20.128 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> Code: 200 messCode: OK
+2021-09-24 16:20:20.129 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> response: Dati inviati... idIssuer NONE... azienda NONE... studyUID e/o accessionNumber parametri obbligatori
+2021-09-24 16:20:20.131 [main] INFO  test.CreatePdiTest - [CreatePdiTest.absentAccNumAndStudyUIDTest] -> Fine esecuzione test absentAccNumAndStudyUIDTest, esito: true
+2021-09-24 16:20:20.132 [main] INFO  main.MainToRunTest - Test #4: TEST PASSED
+2021-09-24 16:20:20.132 [main] INFO  test.CreatePdiTest - [CreatePdiTest.patientIDNotGivenTest] -> Esecuzione test patientIDNotGivenTest
+2021-09-24 16:20:20.133 [main] INFO  test.CreatePdiTest - [CreatePdiTest.getCreatePdiUrl] url: http://localhost:8080/o3-dpacs-pdi/CreatePdi?azienda=NONE&studyUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&accessionNumber=T5F130866
+2021-09-24 16:20:20.202 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> Code: 200 messCode: OK
+2021-09-24 16:20:20.203 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> response: Dati inviati... patientID e' un parametro obbligario
+2021-09-24 16:20:20.203 [main] INFO  test.CreatePdiTest - [CreatePdiTest.patientIDNotGivenTest] -> Fine esecuzione test patientIDNotGivenTest, esito: true
+2021-09-24 16:20:20.203 [main] INFO  main.MainToRunTest - Test #5: TEST PASSED
+2021-09-24 16:20:20.203 [main] INFO  test.CreatePdiTest - [CreatePdiTest.accNumAndStudyUIDBothMultipartTest] -> Esecuzione test accNumAndStudyUIDBothMultipartTest
+2021-09-24 16:20:20.204 [main] INFO  test.CreatePdiTest - [CreatePdiTest.getCreatePdiUrl] url: http://localhost:8080/o3-dpacs-pdi/CreatePdi?patientID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&azienda=NONE&studyUID=999.999.3859744,1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&accessionNumber=T5F130866,T5F130865
+2021-09-24 16:20:20.479 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> Code: 200 messCode: OK
+2021-09-24 16:20:20.481 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> response: Dati inviati... idIssuer NONE... azienda NONE... studyUID e/o accessionNumber contengono entrambi piu valori
+2021-09-24 16:20:20.482 [main] INFO  test.CreatePdiTest - [CreatePdiTest.accNumAndStudyUIDBothMultipartTest] -> Fine esecuzione test accNumAndStudyUIDBothMultipartTest, esito: true
+2021-09-24 16:20:20.482 [main] INFO  main.MainToRunTest - Test #6: TEST PASSED
+2021-09-24 16:20:20.483 [main] INFO  test.CreatePdiTest - [CreatePdiTest.multipleAccNumAndSingleStudyUIDTest] -> Esecuzione test multipleAccNumAndSingleStudyUIDTest
+2021-09-24 16:20:20.483 [main] INFO  test.CreatePdiTest - [CreatePdiTest.getCreatePdiUrl] url: http://localhost:8080/o3-dpacs-pdi/CreatePdi?patientID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&azienda=NONE&studyUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&accessionNumber=T5F130866,T5F130865
+2021-09-24 16:20:21.218 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> Code: 200 messCode: OK
+2021-09-24 16:20:21.219 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> response: Dati inviati... idIssuer NONE... azienda NONE... Il paziente non e' lo stesso
+2021-09-24 16:20:21.219 [main] INFO  test.CreatePdiTest - [CreatePdiTest.multipleAccNumAndSingleStudyUIDTest] -> Fine esecuzione test multipleAccNumAndSingleStudyUIDTest, esito: true
+2021-09-24 16:20:21.219 [main] INFO  main.MainToRunTest - Test #7: TEST PASSED
+2021-09-24 16:20:21.220 [main] INFO  test.CreatePdiTest - [CreatePdiTest.multipleStudyUIDAndSingleAccNumTest] -> Esecuzione test multipleStudyUIDAndSingleAccNumTest
+2021-09-24 16:20:21.220 [main] INFO  test.CreatePdiTest - [CreatePdiTest.getCreatePdiUrl] url: http://localhost:8080/o3-dpacs-pdi/CreatePdi?patientID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&azienda=NONE&studyUID=999.999.3859744,1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0&accessionNumber=T5F130865
+2021-09-24 16:20:21.902 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> Code: 200 messCode: OK
+2021-09-24 16:20:21.902 [main] INFO  test.CreatePdiTest - [CreatePdiTest.callCreatePdiUrl] -> response: Dati inviati... idIssuer NONE... azienda NONE... Il paziente non e' lo stesso
+2021-09-24 16:20:21.903 [main] INFO  test.CreatePdiTest - [CreatePdiTest.multipleStudyUIDAndSingleAccNumTest] -> Fine esecuzione test multipleStudyUIDAndSingleAccNumTest, esito: true
+2021-09-24 16:20:21.903 [main] INFO  main.MainToRunTest - Test #8: TEST PASSED
+2021-09-24 16:20:21.903 [main] INFO  main.MainToRunTest - Esecuzione dei test terminata
+2021-09-24 16:20:21.904 [main] INFO  main.MainToRunTest - PASSED: 8 FAILED: 0

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory >
+	 	<property name="hibernate.session_factory_name">DpacsSessionFactory</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.datasource">jdbc/dbDS</property>
+		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JTATransactionFactory</property>
+		<property name="hibernate.transaction.manager_lookup_class">org.hibernate.transaction.JBossTransactionManagerLookup</property>
+		<property name="hibernate.transaction.auto_close_session">true</property>
+		<property name="hibernate.transaction.flush_before_completion">true</property>
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.max_fetch_depth">5</property>
+		<property name="hibernate.query.substitutions">SQL</property>
+		<mapping resource="it/units/htl/maps/mappingFile/Series.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/Patients.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/PatientDemographics.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/WlpatientDataPerVisit.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/Studies.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/Equipment.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/KnownNodes.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/PhysicalMedia.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/Users.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/NodesForwardMapping.hbm.xml"></mapping>
+		<mapping resource="it/units/htl/maps/mappingFile/ServicesConfiguration.hbm.xml"></mapping>
+	</session-factory>
+</hibernate-configuration>

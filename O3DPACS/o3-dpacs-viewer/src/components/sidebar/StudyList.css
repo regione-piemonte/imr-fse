@@ -1,0 +1,9 @@
+.study-list {
+  max-height: 50%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.study-list-item {
+  background-color: black;
+}

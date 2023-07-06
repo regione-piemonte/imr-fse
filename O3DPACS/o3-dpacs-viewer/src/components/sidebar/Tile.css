@@ -1,0 +1,30 @@
+.tile-img {
+  background-color: black;
+  border: 1px solid #333333;
+  border-radius: 0px;
+  color: black;
+  margin: 4px;
+  width: 128px;
+  height: 128px;
+  object-fit: contain; 
+}
+
+.tile-img:active, .tile-img.active, .tile-img-active {
+  border-color: #627FC0;
+}
+
+/* Container holding the image and the text */
+.tile-container {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+/* Bottom right text */
+.text-bottom-right {
+  position: absolute;
+  color: lightgray;
+  bottom: 6px;
+  right: 8px;
+  background-color: black;
+}

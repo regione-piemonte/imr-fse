@@ -1,0 +1,59 @@
+/* scrollbar */
+html {
+  /* IE6 and upper */
+  scrollbar-3dlight-color: rgba(51, 51, 51, 1);;
+  scrollbar-arrow-color: rgba(51, 51, 51, 0.8);
+  scrollbar-highlight-color: rgba(128, 135, 139, 0.8);
+  scrollbar-face-color: rgba(51, 51, 51, 0.8);
+	scrollbar-shadow-color:  rgba(51, 51, 51, 0.8);
+	scrollbar-darkshadow-color: rgba(51, 51, 51, 1);
+	scrollbar-track-color: rgba(0, 0, 0, 0.8);
+  /* Firefox */
+  scrollbar-color: dark;
+  scrollbar-width: thin;
+}
+html ::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 5px;
+  background: rgba(51, 51, 51, 0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+html ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 0.6em;
+}
+html ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0px;
+}
+html ::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 5px;
+  background: rgba(51, 51, 51, 1);
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+html ::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(51, 51, 51, 0.5);
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 135, 139, 0.8);
+}
+/* Inverted UI */
+html .ui.inverted {
+  scrollbar-color: rgba(200, 200, 200, 1) rgba(255, 255, 255, 0.1);
+  scrollbar-width: 0.8em;
+}
+html .ui.inverted::-webkit-scrollbar-track {
+  background: rgba(200, 200, 200, 0.1);
+}
+html .ui.inverted::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+}
+html .ui.inverted::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.15);
+}
+body .ui.inverted::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}

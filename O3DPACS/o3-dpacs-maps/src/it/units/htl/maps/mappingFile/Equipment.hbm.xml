@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-gen-2009 13.44.40 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping default-lazy="false">
+ <class name="it.units.htl.maps.Equipment" table="Equipment">
+  <id name="pk" type="java.lang.Long">
+   <column name="pk" unique="true"/>
+   <generator class="sequence">
+    <param name="sequence">EQUIPMENT_PK_SEQ</param>
+   </generator>
+  </id>
+  <property generated="never" lazy="false" name="equipmentType" type="string">
+   <column length="16" name="equipmentType"/>
+  </property>
+  <property generated="never" lazy="false" name="manufacturer" type="string">
+   <column length="64" name="manufacturer"/>
+  </property>
+  <property generated="never" lazy="false" name="institutionName" type="string">
+   <column length="64" name="institutionName"/>
+  </property>
+  <property generated="never" lazy="false" name="stationName" type="string">
+   <column length="16" name="stationName"/>
+  </property>
+  <property generated="never" lazy="false"
+   name="institutionalDepartmentName" type="string">
+   <column length="64" name="institutionalDepartmentName"/>
+  </property>
+  <property generated="never" lazy="false" name="manufacturersModelName" type="string">
+   <column length="64" name="manufacturersModelName"/>
+  </property>
+  <property generated="never" lazy="false" name="deviceSerialNumber" type="string">
+   <column length="64" name="deviceSerialNumber"/>
+  </property>
+  <property generated="never" lazy="false" name="dateOfLastCalibration" type="date">
+   <column length="0" name="dateOfLastCalibration"/>
+  </property>
+  <property generated="never" lazy="false" name="timeOfLastCalibration" type="time">
+   <column length="0" name="timeOfLastCalibration"/>
+  </property>
+  <property generated="never" lazy="false" name="lastCalibratedBy" type="string">
+   <column length="64" name="lastCalibratedBy"/>
+  </property>
+  <property generated="never" lazy="false" name="conversionType" type="string">
+   <column length="16" name="conversionType"/>
+  </property>
+  <property generated="never" lazy="false"
+   name="secondaryCaptureDeviceId" type="string">
+   <column length="64" name="secondaryCaptureDeviceID"/>
+  </property>
+  <set inverse="true" name="knownNodes" sort="unsorted">
+   <key>
+    <column name="equipmentFK" not-null="true"/>
+   </key>
+   <one-to-many class="it.units.htl.maps.KnownNodes"/>
+  </set>
+ </class>
+</hibernate-mapping>

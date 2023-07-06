@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Viewer Test Page</title>
+</head>
+
+<body>
+	<span display="block" style="height: 100%; margin: 0; padding: 0;">
+		<iframe
+			id="htmlViewer"
+			src="index.html"
+			title='viewer'
+			credentials="QWRtaW5pc3RyYXRvcjpjZGI0MDNhNjgzMDcxMWQ1OGExY2UyNTM4MjBhODU3ZmQ1YWFjZThi"
+			studyuid="1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0"
+			serviceurl="/o3-dpacs-wado"
+			keyImagesOnly="true"
+			style="height: 576px; width: 768px; border: none"
+		>
+		</iframe>
+
+		<script type="text/javascript" language="javascript">
+			function getWindowHeight() {
+				if (document.all) {
+					return document.body.offsetHeight;
+				} else {
+					return window.innerHeight;
+				}
+			}
+
+			function getWindowWidth() {
+				if (document.all) {
+					return document.body.offsetWidth;
+				} else {
+					return window.innerWidth;
+				}
+			}
+
+			document.getElementById("htmlViewer").style.height = (getWindowHeight() - 160) + "px";
+			document.getElementById("htmlViewer").style.width = (getWindowWidth() - 60) + "px";
+
+		</script>
+	</span>
+</body>
+
+</html>

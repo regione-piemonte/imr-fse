@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 8, 2009 10:08:09 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping default-lazy="false">
+ <class name="it.units.htl.maps.Patients" table="Patients">
+  <id name="pk" type="java.lang.Long">
+   <column name="pk"/>
+   <generator class="sequence">
+    <param name="sequence">PATIENTS_PK_SEQ</param>
+   </generator>
+  </id>
+  <property generated="never" lazy="false" name="lastName" type="string">
+   <column length="60" name="lastName"/>
+  </property>
+  <property generated="never" lazy="false" name="firstName" type="string">
+   <column length="60" name="firstName"/>
+  </property>
+  <property generated="never" lazy="false" name="middleName" type="string">
+   <column length="60" name="middleName"/>
+  </property>
+  <property generated="never" lazy="false" name="prefix" type="string">
+   <column length="60" name="prefix"/>
+  </property>
+  <property generated="never" lazy="false" name="suffix" type="string">
+   <column length="60" name="suffix"/>
+  </property>
+  <property generated="never" lazy="false" name="birthDate" type="date">
+   <column length="0" name="birthDate"/>
+  </property>
+  <!--  <property generated="never" lazy="false" name="birthTime" type="time">
+			<column length="0" name="birthTime" />
+		</property>  -->
+  <property generated="never" lazy="false" name="sex" type="java.lang.Character">
+   <column length="1" name="sex"/>
+  </property>
+  <property generated="never" lazy="false" name="patientId" type="string">
+   <column length="64" name="patientID" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="idIssuer" type="string">
+   <column length="64" name="idIssuer"/>
+  </property>
+  <!-- <property generated="never" lazy="false" name="toReconcile" type="java.lang.Character">
+			<column length="1" name="toReconcile" />
+		</property>
+		<property generated="never" lazy="false" name="deprecated" type="java.lang.Boolean">
+			<column name="deprecated" />
+		</property>
+		<property generated="never" lazy="false" name="mergedBy" type="java.lang.Long">
+			<column name="mergedBy" />
+		</property>-->
+  <set batch-size="10"  name="studies"
+   order-by="StudyDate desc" sort="unsorted">
+   <key column="patientFk"/>
+   <one-to-many class="it.units.htl.maps.Studies"/>
+  </set>
+  <!-- <set inverse="true" lazy="true" name="WlpatientDataPerVisits" sort="unsorted">
+			<key column="pk" />
+			<one-to-many class="it.units.htl.maps.WlpatientDataPerVisit" />
+		</set>  -->
+  <one-to-one class="it.units.htl.maps.PatientDemographics"
+   name="patientDemographics" property-ref="patient" />
+ </class>
+</hibernate-mapping>

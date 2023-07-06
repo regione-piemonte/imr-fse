@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="JBossLibraries" basedir="..">
+     <path id="o3-dpacs-core-ejb.library">
+        <pathelement location="${coreLib}/log4j-1.2.17.jar"/>
+        <pathelement location="${coreLib}/commons-logging-1.1.jar"/>
+        <pathelement location="${coreLib}/dcm4che-audit-2.0.24.jar"/>
+        <pathelement location="${coreLib}/jdom.jar"/>
+        <pathelement location="${coreLib}/ojdbc14.jar"/>
+        <pathelement location="${coreLib}/hibernate-core-4.3.11.Final.jar"/>
+        <pathelement location="${coreLib}/dcm4che.jar"/>
+        <pathelement location="${coreLib}/dcm4che-core-2.0.24.jar"/>
+        <pathelement location="${coreLib}/dcm4che-net-2.0.24.jar"/>
+        <pathelement location="${coreLib}/hapi-base-2.1.jar"/>
+        <pathelement location="${coreLib}/dcm4che-imageio-2.0.24.jar"/>
+        <pathelement location="${coreLib}/axiom-api-1.2.8.jar"/>
+        <pathelement location="${coreLib}/axis2-kernel-1.5.1.jar"/>
+        <pathelement location="${coreLib}/o3-xds-core.jar"/>
+        <pathelement location="${coreLib}/commons-httpclient.jar"/>
+        <pathelement location="${coreLib}/dcm4che-image-2.0.24.jar"/>
+        <pathelement location="${coreLib}/hsqldb-1.8.0.10.jar"/>
+        <pathelement location="${coreLib}/hapi-structures-v25-2.1.jar"/>
+        <pathelement location="${coreLib}/jmxtools.jar"/>
+        <pathelement location="${coreLib}/FPLibrary.jar"/>
+        <pathelement location="${coreLib}/hibernate-entitymanager-4.3.11.Final.jar"/>
+		<pathelement location="${coreLib}/XmlSchema-1.4.3.jar"/>
+        <pathelement location="${coreLib}/clibwrapper_jiio.jar"/>
+        <pathelement location="${coreLib}/jai_imageio.jar"/>
+        <pathelement location="${coreLib}/dcm4che-imageio-rle-2.0.24.jar"/>
+        <pathelement location="${coreLib}/mail-1.4.jar"/>
+        <pathelement location="${coreLib}/javax.ejb-api-3.2.jar"/>
+        <pathelement location="${coreLib}/javax.servlet-api-3.0.1.jar"/>
+        <pathelement location="${coreLib}/javax.faces-api-2.1.jar"/>
+        <pathelement location="${coreLib}/javax.el-api-3.0.0.jar"/>
+    </path>
+	
+    <path id="o3-dpacs-wado.library">	
+		<pathelement location="${coreLib}/commons-codec.jar"/>
+		<pathelement location="${coreLib}/jmf.jar"/>
+		<pathelement location="${coreLib}/fop.jar"/>
+		<pathelement location="${coreLib}/xuggle/xuggle-xuggler.jar"/>
+    </path>
+
+    <path id="o3-dpacs-web.library">	
+		<pathelement location="${coreLib}/axis2-adb-1.5.1.jar"/>
+        <pathelement location="${coreLib}/richfaces-api-3.2.2.GA.jar"/>
+        <pathelement location="${coreLib}/richfaces-impl-3.2.2.GA.jar"/>
+        <pathelement location="${coreLib}/richfaces-ui-3.2.2.GA.jar"/>
+        <pathelement location="${coreLib}/commons-fileupload-1.2.1.jar"/>
+        <pathelement location="${coreLib}/iText-2.1.5.jar"/>
+        <pathelement location="${coreLib}/wsdl4j-1.6.2.jar"/>
+		<pathelement location="${coreLib}/flex/flex-messaging-common.jar"/>
+		<pathelement location="${coreLib}/flex/flex-messaging-common.jar"/>
+        <pathelement location="${coreLib}/flex/flex-messaging-core.jar"/>
+        <pathelement location="${coreLib}/flex/flex-messaging-opt.jar"/>
+        <pathelement location="${coreLib}/flex/flex-messaging-proxy.jar"/>
+        <pathelement location="${coreLib}/flex/flex-messaging-remoting.jar"/>
+        <pathelement location="${coreLib}/flex/flex-rds-server.jar"/>
+    </path>
+
+    <path id="o3-dpacs-maps.library">
+        <pathelement location="${coreLib}/commons-logging-1.1.jar"/>
+        <pathelement location="${coreLib}/hibernate-core-4.3.11.Final.jar"/>
+        <pathelement location="${coreLib}/hibernate-entitymanager-4.3.11.Final.jar"/>
+        <pathelement location="${coreLib}/log4j-1.2.17.jar"/>
+    </path>
+	
+    <fileset dir="${coreLib}" id="o3-dpacs-ear.library">
+		<include name="axis2-adb-1.5.1.jar"/>               
+		<include name="axis2-kernel-1.5.1.jar"/>
+		<include name="axis2-transport-http-1.5.1.jar"/>    
+		<include name="axis2-transport-local-1.5.1.jar"/>
+		<include name="clibwrapper_jiio.jar"/>
+		<include name="dcm4che-audit-2.0.24.jar"/>
+		<include name="dcm4che-core-2.0.24.jar"/>           
+		<include name="dcm4che-image-2.0.24.jar"/>
+		<include name="dcm4che-imageio-2.0.24.jar"/>        
+		<include name="dcm4che-net-2.0.24.jar"/>
+		<include name="dcm4che.jar"/>                      
+		<include name="hapi-base-2.1.jar"/>                 
+		<include name="jai_imageio.jar"/>
+		<include name="jaxb-impl.jar"/>                     
+		<include name="jdom-1.1.3.redhat-2.jar"/>
+		<include name="jmxtools.jar"/>                      
+		<include name="fop.jar"/>
+		<include name="xmlgraphics-commons-1.3.1.jar"/>
+		<include name="avalon-framework-4.2.0.jar"/>
+		<include name="commons-io-1.3.1.jar"/>
+		<include name="xercesimpl.jar"/>
+	</fileset>
+	
+    <fileset dir="${coreLib}/xuggle" id="o3-dpacs-ear-xuggle.library">
+		<include name="xuggle-xuggler.jar"/>                      
+    </fileset>	
+	
+</project>

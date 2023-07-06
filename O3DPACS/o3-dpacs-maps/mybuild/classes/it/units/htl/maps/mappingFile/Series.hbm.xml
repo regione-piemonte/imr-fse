@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 8, 2009 10:08:09 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping default-lazy="false">
+ <class name="it.units.htl.maps.Series" table="Series">
+  <id name="seriesInstanceUid" type="string">
+   <column length="64" name="seriesInstanceUID"/>
+   <generator class="assigned"/>
+  </id>
+   <property generated="never" lazy="false" name="seriesNumber" type="java.lang.Long">
+   <column name="seriesNumber"/>
+  </property>
+  <property generated="never" lazy="false" name="modality" type="string">
+   <column length="16" name="modality"/>
+  </property>
+  <property generated="never" lazy="false" name="bodyPartExamined" type="string">
+   <column length="16" name="bodyPartExamined"/>
+  </property>
+ <!-- <property generated="never" lazy="false" name="seriesStatus" type="java.lang.Character">
+   <column length="1" name="seriesStatus"/>
+  </property>-->
+  <!--  <property generated="never" lazy="false" name="studyFk" type="string">
+   <column length="64" name="studyFK"/>
+  </property>-->
+  <property generated="never" lazy="false"
+   name="numberOfSeriesRelatedInstances" type="java.lang.Integer">
+   <column name="numberOfSeriesRelatedInstances"/>
+  </property>
+  <!--  <property generated="never" lazy="false" name="equipmentFk" type="java.lang.Long">
+   <column name="equipmentFK"/>
+  </property>-->
+  <property generated="never" lazy="false" name="deprecated" type="java.lang.Boolean">
+   <column name="deprecated"/>
+  </property>
+  <property generated="never" lazy="false" name="seriesDescription" type="string">
+   <column length="64" name="seriesDescription"/>
+  </property>
+  <many-to-one class="it.units.htl.maps.Studies" column="studyFk" name="studies" unique="true"/>
+ </class>
+</hibernate-mapping>

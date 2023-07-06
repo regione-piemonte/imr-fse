@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="o3-dpacs-core-ejb">
+        <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
+        <property name="java-output-path" value="/o3-dpacs-core-ejb/build/classes"/>
+        <property name="ClientProject" value="o3-dpacs-core-ejbClient"/>
+        <property name="ClientJARURI" value="o3-dpacs-core-ejbClient.jar"/>
+    </wb-module>
+</project-modules>

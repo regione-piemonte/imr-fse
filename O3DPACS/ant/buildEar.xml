@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs.ear" default="buildEarPackage" basedir=".">
+	<loadproperties srcfile="build.properties" />
+	<import file="librariesDefinition.xml" />
+
+	<target name="buildEarPackage" depends="clean,buildMaps, buildCore, buildWado, buildWeb">
+
+		<copy todir="${earBuild}/lib" includeemptydirs="true">
+		
+			<fileset refid="o3-dpacs-ear.library" />
+			<fileset refid="o3-dpacs-ear-xuggle.library" />
+		
+			<fileset dir="${distFolder}">
+				<include name="o3-dpacs-maps.jar" />
+			</fileset>
+
+		</copy>
+
+		<ear destfile="${distFolder}/${earPacket}" appxml="${earFolder}/EarContent/META-INF/application.xml" compress="false">
+			<fileset dir="${distFolder}" includes="o3-dpacs-core-ejb.jar,o3-dpacs-wado.war,o3-dpacs-web.war" />
+		
+			<fileset dir = "${earFolder}/EarContent">
+			   <include name = "**/*.*"/>
+		    </fileset>		
+			
+			<fileset dir = "${earBuild}">
+			   <include name = "**/*.*"/>
+		    </fileset>				
+		</ear>
+	</target>
+
+	<target name="deploy" depends="undeploy, buildEarPackage">
+		<copy file="${distFolder}/${earPacket}" todir="${SERVER_DEPLOY_FOLDER}" />
+		<sleep seconds="5" />
+	</target>
+	<target name="undeploy">
+		<delete file="${SERVER_DEPLOY_FOLDER}/${earPacket}" failonerror="true" />
+	</target>
+
+	<target name="buildWado">
+		<ant antfile="buildWado.xml" target="buildPackageWado" />
+	</target>
+
+	<target name="buildWeb">
+		<ant antfile="buildWeb.xml" target="buildPackagedWeb" />
+	</target>
+	
+	<target name="buildCore">
+		<ant antfile="buildCore.xml" target="buildCorePackage" />
+	</target>
+
+	<target name="buildMaps">
+		<ant antfile="buildMaps.xml" target="buildMapsPackage" />
+	</target>
+	<target name="clean">
+		<delete dir="${earBuild}" />
+		<!-- delete file="${earBuild}.*"/ -->
+	</target>
+</project>

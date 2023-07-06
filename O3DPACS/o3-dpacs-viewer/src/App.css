@@ -1,0 +1,199 @@
+.disable-select {
+  user-select: none; /* supported by Chrome and Opera */
+ -webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.app {
+  background-color: black;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: none;
+}
+
+.app-backgroud {
+  background-color: black;
+}
+
+.app-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.app-loader {
+  background-color: transparent;
+  color: #627FC0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.app-container {
+  margin: 0;
+  padding: 0;
+}
+
+.app-header { 
+  margin: 5px;
+  padding: 5px;
+  background-color: #627FC0;
+  color: #FFFFFF;
+  height: 55px;
+  width: 100%;
+  border-bottom: 1px solid #666666;
+}
+
+.app-main {
+  background-color: black;
+  height: 100%;
+  max-height: 100%;
+}
+
+.app-sidebar {
+  background-color: black;
+  height: 100%;
+  max-height: 100%;
+  margin: 0px;
+  padding-left: 7px;
+  padding-right: 0px;
+}
+
+.app-viewer {
+  background-color: black;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  display: inherit;
+}
+
+.gutter {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  cursor: col-resize;
+}
+.gutter.gutter-horizontal {
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='ellipsis-v' class='svg-inline--fa fa-ellipsis-v fa-w-6' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 512'%3E%3Cpath fill='%23666' d='M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z'%3E%3C/path%3E%3C/svg%3E");
+}
+.gutter.gutter-horizontal:hover {
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='ellipsis-v' class='svg-inline--fa fa-ellipsis-v fa-w-6' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 512'%3E%3Cpath fill='%23627FC0' d='M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.app-list-group {
+  border-radius: 0px;
+}
+
+.app-list-group-item {
+  background: black;
+  display: inline;
+  border: none;
+  border-radius: 0px;
+  cursor: default;
+  color: white;
+}
+.app-list-group-item:active, 
+.app-list-group-item.active {
+  background: #627FC0;
+  color: #FFFFFF;
+}
+.app-list-group-item:hover {
+  background: #6C757D;
+  color: #FFFFFF;
+}
+.app-list-group-item:focus {
+  outline: none;
+}
+.app-list-group-item-border:not(:first-child) {
+  border-top: 1px solid #666666;
+}
+
+.app-fa-icon {
+  color: #627FC0;
+}
+.app-fa-icon:active, .app-fa-icon.active,
+.app-fa-icon:hover {
+  color: white;
+}
+.app-list-group-item:active .app-fa-icon,
+.app-list-group-item.active .app-fa-icon,
+.app-list-group-item:hover .app-fa-icon {
+  background: inherit;
+  color: white;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.fit-width {
+  width: 100%;
+}
+.fit-height {
+  height: 100%;
+}
+
+.nav-tool, 
+.nav-tool:focus, .nav-tool.focus,
+.show > .nav-tool.dropdown-toggle {
+  border-radius: 0px;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.nav-tool-elevation {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+.nav-tool:not(:disabled):not(.disabled),
+.show > .nav-tool.dropdown-toggle {
+  background-color: transparent;
+  color: white;
+  outline: none;
+}
+
+.nav-tool:not(:disabled):not(.disabled):active,
+.nav-tool:not(:disabled):not(.disabled).active,
+.show > .nav-tool.dropdown-toggle {
+  color: #627FC0;
+}
+
+.nav-tool:not(:disabled):not(.disabled):active:focus,
+.nav-tool:not(:disabled):not(.disabled).active:focus,
+.show > .nav-tool.dropdown-toggle {
+  color: #627FC0;
+}
+
+.nav-tool:not(:disabled):not(.disabled):hover,
+.nav-tool:not(:disabled):not(.disabled).hover,
+.show > .nav-tool.dropdown-toggle {
+  color: white;
+  background-color: #6C757D;
+}
+
+.navbar-toggler {
+  outline: none;
+}
+
+.navbar-toggler:not(:disabled):not(.disabled):hover,
+.navbar-toggler:not(:disabled):not(.disabled).hover,
+.navbar-toggler:not(:disabled):not(.disabled):focus {
+  outline: none;
+  color: #627FC0;
+}
+
+button, button:focus {
+  outline: none;
+}

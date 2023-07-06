@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 11, 2009 12:11:16 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="it.units.htl.maps.ServicesConfiguration" table="ServicesConfiguration" >
+        <id name="serviceName" type="string">
+            <column name="serviceName" length="24" />
+            <generator class="assigned" />
+        </id>
+        <property name="configuration" type="string">
+            <column name="configuration" length="65535" />
+        </property>
+        <property name="enabled" type="java.lang.Boolean">
+            <column name="enabled" not-null="true" />
+        </property>
+        <property name="runFromIp" type="string">
+            <column name="runFromIp" length="16" />
+        </property>
+    </class>
+</hibernate-mapping>

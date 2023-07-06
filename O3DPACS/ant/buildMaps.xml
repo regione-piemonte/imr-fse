@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs-maps.jar" default="build" basedir=".">
+	<loadproperties srcfile="build.properties" />
+	<import file="librariesDefinition.xml" />
+		
+	<target name="buildMapsPackage" depends="build">
+		<jar destfile="${distFolder}/${mapsPacket}">
+			<fileset dir="${mapsBuild}" />
+		</jar>
+	</target>
+
+	<target name="build" depends="clean" description="this target compile source of maps project">
+		<javac srcdir="${mapsSrc}" destdir="${mapsBuild}" debug="${FOR_DEBUG}" target="${JAVA_TARGET}">
+			<classpath refid="o3-dpacs-maps.library"/>
+		</javac>
+		
+		<copy todir="${mapsBuild}" includeemptydirs="true">
+			<fileset dir="${mapsSrc}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		
+	</target>
+
+	<target name="clean" description="thie target cleanup build folder">
+		<delete includeemptydirs="true" failonerror="false">
+			<fileset dir="${mapsBuild}" />
+		</delete>
+		<mkdir dir="${mapsBuild}" />
+	</target>
+</project>

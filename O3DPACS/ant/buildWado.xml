@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs-core.jar" basedir="." default="build">
+	<loadproperties srcfile="build.properties" />
+	<import file="librariesDefinition.xml" />
+	
+	<path id="runtimeCompiledLibraries">
+		<pathelement location="${distFolder}/${mapsPacket}" />
+		<pathelement location="${distFolder}/${corePacket}" />
+	</path>
+
+	<target name="buildPackageWado" depends="build">		
+
+		<war destfile="${distFolder}/${wadoPacket}" webxml="${wadoFolder}/WebContent/WEB-INF/web.xml" compress="false" manifest="${wadoFolder}/WebContent/META-INF/MANIFEST.MF">
+			<classes dir="${wadoBuild}" />
+			
+		    <fileset dir = "${wadoFolder}/WebContent">
+			   <include name = "**/*.*"/>
+		    </fileset>
+		</war>		
+	</target>
+
+	<target name="build" depends="clean, compileDependencies">
+		<echo message="Compiling source of o3-dpacs-wado..." />
+
+		<javac srcdir="${wadoSrc}" destdir="${wadoBuild}" debug="${FOR_DEBUG}" target="${JAVA_TARGET}">
+			<compilerarg value="-XDignore.symbol.file" />
+			<classpath>
+				<path refid="o3-dpacs-core-ejb.library" />
+				<path refid="o3-dpacs-wado.library" />
+				
+				<path refid="runtimeCompiledLibraries" />
+			</classpath>
+		</javac>
+		<echo message="Coping file that aren't class" />
+		<copy todir="${wadoBuild}" includeemptydirs="true">
+			<fileset dir="${wadoSrc}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<echo message="The file are ready for packaging" />
+	</target>
+
+	<target name="compileDependencies">
+		<ant antfile="buildMaps.xml" target="buildMapsPackage" />
+		<ant antfile="buildCore.xml" target="buildCorePackage" />
+	</target>
+
+	<target name="clean">
+		<echo message="Cleaning up the build directory of o3-dpacs-wado" />
+		<delete dir="${wadoBuild}" />
+		<mkdir dir="${wadoBuild}" />
+	</target>
+</project>

@@ -1,0 +1,9 @@
+.sidebar {
+  height: 100vh;
+}
+
+.sidebar-row {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

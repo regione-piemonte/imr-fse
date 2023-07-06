@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs.ear" basedir=".." default="deploy">
+	<loadproperties srcfile="ant/build.properties" />
+	<target name="buildEarPackage" depends="clean,buildMaps, buildCore, buildWado,buildWeb">
+		<ear destfile="${destinationFolder}/${earPacket}" appxml="EarContent/META-INF/application.xml" compress="false">
+			<fileset dir="${coreFolder}/mybuild" includes="*.jar" />
+			<fileset dir="${wadoFolder}/mybuild" includes="*.war" />
+			<fileset dir="${webFolder}/mybuild" includes="*.war" />
+			<zipfileset prefix="lib" refid="libForJBoss_6.4"></zipfileset>
+			<zipfileset prefix="lib" refid="libForJBoss_6.4_web"></zipfileset>
+			<zipfileset prefix="lib" refid="jdomLib"></zipfileset>
+			<zipfileset prefix="lib" refid="mapLib"></zipfileset>
+			<metainf dir="EarContent/META-INF"></metainf>
+		</ear>
+	</target>
+
+	<fileset dir="../../LIBRERIE-O3DPACS/CORE" id="libForJBoss_6.4">
+		<include name="dcm4che-core-2.0.24.jar" />
+		<include name="dcm4che-imageio-rle-2.0.24.jar" />
+		<include name="dcm4che-audit-2.0.24.jar" />
+		<include name="dcm4che-net-2.0.24.jar" />
+		<include name="dcm4che-imageio-2.0.24.jar" />
+		<include name="dcm4che-image-2.0.24.jar" />	
+		<include name="hapi-base-2.1.jar" />
+		<include name="axis2-transport-local-1.5.1.jar" />
+		<include name="axis2-kernel-1.5.1.jar" />
+		<include name="axis2-adb-1.5.1.jar" />
+		<include name="axis2-transport-http-1.5.1.jar" />	
+		<include name="jai_imageio-1.0.jar" />
+		<include name="jmxtools.jar" />
+	</fileset>
+	<fileset dir="../../LIBRERIE-O3DPACS/WEB" id="libForJBoss_6.4_web">
+		<include name="dcm4che.jar" />
+	</fileset>
+	<fileset dir="../o3-dpacs-web-new/WebContent/WEB-INF/lib" id="jdomLib">
+		<include name="jdom-1.1.3.redhat-2.jar" />
+	</fileset>
+	<fileset dir="../o3-dpacs-maps-new/mybuild" id="mapLib">
+		<include name="o3-dpacs-maps-new.jar" />
+	</fileset>
+
+
+	<target name="deploy" depends="undeploy, buildEarPackage">
+		<copy file="${destinationFolder}/${earPacket}" todir="${SERVER_DEPLOY_FOLDER}"></copy>
+		<sleep seconds="5" />
+	</target>
+	<target name="undeploy">
+		<delete file="${SERVER_DEPLOY_FOLDER}/${earPacket}" failonerror="false" />
+	</target>
+	
+	<target name="buildMaps">
+		<ant antfile="ant/buildMaps.xml" target="build" />
+	</target>
+	
+	<target name="buildCore">
+		<ant antfile="ant/buildCore.xml" target="build" />
+	</target>
+	
+	<target name="buildWado">
+		<ant antfile="ant/buildWado.xml" target="build" />
+	</target>
+
+	<target name="buildWeb">
+		<ant antfile="ant/buildWeb.xml" target="build" />
+	</target>
+	
+	<target name="clean">
+		<delete dir="${earBuild}" />
+	</target>
+</project>

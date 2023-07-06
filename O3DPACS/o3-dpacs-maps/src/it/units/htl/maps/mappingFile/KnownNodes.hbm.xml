@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-gen-2009 13.44.40 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true"
+  name="it.units.htl.maps.KnownNodes" table="KnownNodes">
+  <id name="pk" type="java.lang.Long">
+   <column name="pk" unique="true"/>
+   <generator class="sequence">
+    <param name="sequence">KNOWNNODES_PK_SEQ</param>
+   </generator>
+  </id>
+  <many-to-one class="it.units.htl.maps.Equipment" fetch="select" name="equipment">
+   <column name="equipmentFK" not-null="true"/>
+  </many-to-one>
+  <many-to-one class="it.units.htl.maps.PhysicalMedia" fetch="select" name="physicalMedia">
+   <column name="preferredStorageFK" not-null="true"/>
+  </many-to-one>
+  <property generated="never" lazy="false" name="aeTitle" type="string">
+   <column length="64" name="aeTitle" not-null="true" unique="true"/>
+  </property>
+  <property generated="never" lazy="false" name="ip" type="string">
+   <column length="64" name="ip" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="port" type="int">
+   <column name="port" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="cipherSuites" type="string">
+   <column length="1024" name="cipherSuites"/>
+  </property>
+  <property generated="never" lazy="false" name="transferSyntaxUid" type="string">
+   <column length="32" name="transferSyntaxUid"/>
+  </property>
+  <property generated="never" lazy="false" name="isAnonimized" type="java.lang.Boolean">
+   <column name="isAnonimized"/>
+  </property>
+  <property generated="never" lazy="false" name="removePatientId" type="java.lang.Boolean">
+   <column name="removePatientId"/>
+  </property>
+  <property generated="never" lazy="false" name="mobile" type="java.lang.Character">
+   <column length="1" name="mobile"/>
+  </property>
+  <property generated="never" lazy="false" name="isEnabled" type="java.lang.Boolean">
+   <column name="isEnabled"/>
+  </property>
+  <property generated="never" lazy="false" name="isImageMaskingEnabled" type="java.lang.Boolean">
+   <column name="isImageMaskingEnabled"/>
+  </property>
+  <property generated="never" lazy="false" name="forwardEndConfirmation" type="char">
+   <column length="1" name="forwardEndConfirmation" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="frameIncrementPointer" type="string">
+   <column length="12" name="frameIncrementPointer"/>
+  </property>
+  <property generated="never" lazy="false" name="frameTime" type="float">
+   <column name="frameTime"/>
+  </property>
+  <property generated="never" lazy="false" name="wadoURL" type="string">
+   <column length="512" name="wadoUrl" not-null="false"/>
+  </property>
+  <property generated="never" lazy="false" name="toVerify" type="java.lang.Boolean">
+   <column name="toVerify"/>
+  </property>
+  <property generated="never" lazy="false" name="prefCallingAet" type="string">
+   <column length="64" name="prefCallingAet" not-null="true"/>
+  </property>
+ </class>
+</hibernate-mapping>

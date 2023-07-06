@@ -1,0 +1,3 @@
+<-> CODICE DEL TEST # DESCRIZIONE DEL TEST # REQUESTID # PATIENTID # STUDYUID # ACCESSION NUMBER # IDISSUER # AZIENDA #STRUTTURA # CODICE ATTESO PER RISPOSTA# RISPOSTA ATTESA
+TST_1#Parametri di input: StudyUID non presente AccessionNumber non presente#150#CH19-0014194###NONE#NONE#000585#500#studyUID e/o accessionNumber parametri obbligatori
+TST_2#Entrambi I parametri presenti come liste separate da un separatore (,)#150#CH19-0014194#999.999.3859744,1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.153.0#T5F130866,T5F130865#NONE#NONE#000585#500#studyUID e accessionNumber contengono entrambi piu valori

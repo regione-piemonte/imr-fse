@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+	<project basedir="${coreFolder}" default="build" name="o3-dpacs-core-ejb">
+    <property environment="env"/>
+    <property name="o3-dpacs-wado-new.location" value="../o3-dpacs-wado-new"/>
+    <property name="o3-dpacs-web-new.location" value="../o3-dpacs-web-new"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="Red Hat JBoss Enterprise Application Platform 6.1+ Runtime [JBOSS 6.4 ALTER Runtime].libraryclasspath">
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/jboss/as/jmx/main/jboss-as-jmx-7.5.0.Final-redhat-21.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/activation/api/main/activation-1.1.1.redhat-4.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/annotation/api/main/jboss-annotations-api_1.1_spec-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/ejb/api/main/jboss-ejb-api_3.1_spec-1.0.2.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/el/api/main/jboss-el-api_2.2_spec-1.0.4.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/enterprise/api/main/cdi-api-1.0.0.SP4-redhat-5.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/enterprise/deploy/api/main/jboss-jad-api_1.2_spec-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/faces/api/main/jboss-jsf-api_2.1_spec-2.1.28.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/inject/api/main/javax.inject-1.0.0.redhat-5.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/interceptor/api/main/jboss-interceptors-api_1.1_spec-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/jms/api/main/jboss-jms-api_1.1_spec-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/jws/api/main/jsr181-api-1.0.0.MR1-redhat-7.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/mail/api/main/mail-1.4.5.redhat-2.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/management/j2ee/api/main/jboss-j2eemgmt-api_1.1_spec-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/persistence/api/main/hibernate-jpa-2.0-api-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/resource/api/main/jboss-connector-api_1.6_spec-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/rmi/api/main/jboss-rmi-api_1.0_spec-1.0.4.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/security/auth/message/api/main/jboss-jaspi-api_1.0_spec-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/security/jacc/api/main/jboss-jacc-api_1.4_spec-1.0.3.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/servlet/api/main/jboss-servlet-api_3.0_spec-1.0.2.Final-redhat-2.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/servlet/jsp/api/main/jboss-jsp-api_2.2_spec-1.0.2.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/servlet/jstl/api/main/jboss-jstl-api_1.2_spec-1.0.6.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/transaction/api/main/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/validation/api/main/validation-api-1.0.0.GA-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/ws/rs/api/main/jboss-jaxrs-api_1.1_spec-1.0.1.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/wsdl4j/api/main/wsdl4j-1.6.3.redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/xml/bind/api/main/jboss-jaxb-api_2.2_spec-1.0.4.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/xml/registry/api/main/jboss-jaxr-api_1.0_spec-1.0.2.Final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/xml/rpc/api/main/jboss-jaxrpc-api_1.1_spec-1.0.1.Final-redhat-4.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/xml/soap/api/main/jboss-saaj-api_1.3_spec-1.0.3.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/javax/xml/ws/api/main/jboss-jaxws-api_2.2_spec-2.0.2.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/hibernate/validator/main/hibernate-validator-4.3.2.Final-redhat-2.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/picketbox/main/picketbox-4.1.1.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/picketbox/main/picketbox-commons-1.0.0.final-redhat-3.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/picketbox/main/picketbox-infinispan-4.1.1.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/jboss/as/controller-client/main/jboss-as-controller-client-7.5.0.Final-redhat-21.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/jboss/dmr/main/jboss-dmr-1.2.2.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/jboss/logging/main/jboss-logging-3.1.4.GA-redhat-2.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-2.3.10.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/async-http-servlet-3.0-2.3.10.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.3.10.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-2.3.10.Final-redhat-1.jar"/>
+        <pathelement location="../../../jboss-eap-6.4.0_ALTER/jboss-eap-6.4/modules/system/layers/base/org/jboss/ejb3/main/jboss-ejb3-ext-api-2.1.0.redhat-1.jar"/>
+    </path>
+    <path id="EAR Libraries.libraryclasspath">
+        <pathelement location="../o3-dpacs-maps-new/mybuild/o3-dpacs-maps-new.jar"/>
+        <pathelement location="../o3-dpacs-web-new/WebContent/WEB-INF/lib/jdom-1.1.3.redhat-2.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/dcm4che-core-2.0.24.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/dcm4che-imageio-rle-2.0.24.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/dcm4che-audit-2.0.24.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/dcm4che-net-2.0.24.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/dcm4che-imageio-2.0.24.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/dcm4che-image-2.0.24.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-base-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axis2-transport-local-1.5.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axis2-kernel-1.5.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axis2-adb-1.5.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axis2-transport-http-1.5.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jai_imageio-1.0.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jmxtools.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/WEB/dcm4che.jar"/>
+    </path>
+    <path id="o3-dpacs-core-ejb.classpath">
+        <pathelement location="${coreFolder}/mybuild/classes"/>
+        <path refid="Red Hat JBoss Enterprise Application Platform 6.1+ Runtime [JBOSS 6.4 ALTER Runtime].libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/commons-beanutils.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/commons-cli-1.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/commons-codec.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/commons-collections-3.2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/commons-digester.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/commons-fileupload-1.2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/commons-httpclient.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/commons-io-1.3.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/commons-logging-1.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/log4j-1.2.17.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jai_imageio-1.0.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/activation.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/avalon-framework-4.2.0.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axiom-api-1.2.8.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axiom-dom-1.2.8.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axiom-impl-1.2.8.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axis2-adb-1.5.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axis2-kernel-1.5.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axis2-transport-http-1.5.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/axis2-transport-local-1.5.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/batik-all-1.7.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/batik-dom.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/batik-svg-dom.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/fop.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/FPLibrary.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-base-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-structures-v21-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-structures-v22-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-structures-v23-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-structures-v24-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-structures-v25-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-structures-v26-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-structures-v231-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hapi-structures-v251-2.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hibernate-core-4.3.11.Final.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hibernate-entitymanager-4.3.11.Final.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/hsqldb-1.8.0.10.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/httpcore-4.0.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/iText-2.1.5.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jaxb-api.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jaxb-impl.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jaxb-xjc.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jdom.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jmf.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jmxtools.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/jsr173_api.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/neethi-2.0.4.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/o3-xds-core.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/ojdbc14.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/richfaces-api-3.2.2.GA.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/richfaces-impl-3.2.2.GA.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/richfaces-ui-3.2.2.GA.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/rs_jaxb.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/slf4j-api-1.5.6.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/slf4j-jdk14-1.5.2.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/slf4j-log4j12-1.5.6.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/woden-api-1.0M8.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/woden-impl-dom-1.0M8.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/xmlgraphics-commons-1.3.1.jar"/>
+        <pathelement location="../../LIBRERIE-O3DPACS/CORE/XmlSchema-1.4.3.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="${coreFolder}/mybuild/classes"/>
+        <copy includeemptydirs="false" todir="${coreFolder}/mybuild/classes">
+            <fileset dir="${coreFolder}/ejbModule">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="${coreFolder}/mybuild/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="clean,build-subprojects,build-project,jar" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true"  debuglevel="${debuglevel}" destdir="${coreFolder}/mybuild/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="${coreFolder}/ejbModule"/>
+            <classpath refid="o3-dpacs-core-ejb.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="buildWado.xml" dir="${o3-dpacs-wado-new.location}" inheritAll="false" target="clean"/>
+        <ant antfile="buildWado.xml" dir="${o3-dpacs-wado-new.location}" inheritAll="false" target="build"/>
+        <ant antfile="buildWeb.xml" dir="${o3-dpacs-web-new.location}" inheritAll="false" target="clean"/>
+        <ant antfile="buildWeb.xml" dir="${o3-dpacs-web-new.location}" inheritAll="false" target="build"/>
+    </target>
+    <target name="jar">
+		<jar basedir="${coreFolder}/mybuild/classes" destfile="${coreFolder}/mybuild/${ant.project.name}.jar"></jar>
+    </target>   
+
+</project>

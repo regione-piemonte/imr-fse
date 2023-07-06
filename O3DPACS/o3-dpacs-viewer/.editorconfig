@@ -1,0 +1,9 @@
+root = true
+
+[*]
+indent_size = 2
+indent_style = space
+maxLineLen = 80
+
+[*.md]
+indent_size = false

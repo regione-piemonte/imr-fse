@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- jnlp File for O3-RWS --> 
+<jnlp 
+  spec="1.0+" 
+  codebase="___CODEBASE___" > 
+  <information> 
+    <title>O3-Executor</title> 
+    <vendor>O3-Consortium</vendor> 
+    <homepage href="http://www.o3consortium.eu"/> 
+    <description>O3-EXECUTOR</description> 
+    <description kind="short">An executor for the O3 Products</description> 
+    <icon href="LogoO3.jpg"/> 
+    <!-- <offline-allowed/> -->
+    <shortcut online="false">
+      <desktop/>
+      <menu submenu="O3-Consortium"/>
+    </shortcut>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources> 
+    <j2se version="1.6.+" 
+	href="http://java.sun.com/products/autodl/j2se"
+	java-vm-args="" />
+	<jar href="O3-Executor.jar" main="true"/> 
+   </resources>
+  <application-desc main-class="eu.o3c.o3e.dpacs.executor.RwsOrFlexLauncher">
+  	  <argument>-datasource=string</argument>
+  	  <argument><![CDATA[__CONFIGURATION__]]></argument>
+  	  <argument>___STUDY_UID___</argument>
+  	  <argument>___WEB_URL___</argument>
+  	  <!-- the sop instance of the kos file -->
+  	  <argument>___KOS_SOP_INSTANCE___</argument>
+  </application-desc> 
+</jnlp> 

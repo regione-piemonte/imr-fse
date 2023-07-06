@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 8, 2009 10:08:09 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping default-lazy="false">
+ <class 
+  name="it.units.htl.maps.WlpatientDataPerVisit" table="WLPatientDataPerVisit">
+  <id name="pk" type="java.lang.Long">
+   <column name="pk"/>
+   <generator class="sequence">
+    <param name="sequence">WLPATIENTDATAPERVISIT_PK_SEQ</param>
+   </generator>
+  </id>
+ <!-- <property generated="never" lazy="false" name="patientstate" type="string">
+   <column length="64" name="patientstate"/>
+  </property>
+  <property generated="never" lazy="false" name="patientClass" type="java.lang.Character">
+   <column length="1" name="patientClass"/>
+  </property>
+  <property generated="never" lazy="false"
+   name="assignedPatientLocation" type="string">
+   <column length="80" name="assignedPatientLocation"/>
+  </property>
+  <property generated="never" lazy="false" name="visitNumber" type="string">
+   <column length="20" name="visitNumber"/>
+  </property>
+  <property generated="never" lazy="false" name="pregnancyStatus" type="java.lang.Short">
+   <column name="pregnancyStatus"/>
+  </property>
+  <property generated="never" lazy="false" name="medicalAlerts" type="string">
+   <column length="64" name="medicalAlerts"/>
+  </property>
+  <property generated="never" lazy="false" name="patientWeight" type="java.lang.Long">
+   <column name="patientWeight"/>
+  </property>
+  <property generated="never" lazy="false"
+   name="confidentialityConstraintOnPatientData" type="string">
+   <column length="64" name="confidentialityConstOnPatData "/>
+  </property>
+  <property generated="never" lazy="false" name="specialNeeds" type="string">
+   <column length="64" name="specialNeeds"/>
+  </property>
+   <property generated="never" lazy="false" name="patientFk" type="java.lang.Long" insert="false" update="false">
+   <column name="patientFK"/>
+  </property>-->
+  <property generated="never" lazy="false" name="studyFk" type="string" insert="false" update="false">
+   <column length="64" name="studyFK"/>
+  </property>  
+  <property generated="never" lazy="false" name="deprecated" type="java.lang.Boolean">
+   <column name="deprecated"/>
+  </property>
+  
+  <!--  <one-to-one class="it.units.htl.maps.Studies" name="studies" />  -->
+   
+   
+  <many-to-one class="it.units.htl.maps.Patients" column="patientFK" name="patients"/> 
+ </class>
+</hibernate-mapping>

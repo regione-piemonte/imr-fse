@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs-pdi-copy.jar" default="buildCopyPdiPackage" basedir=".">
+	<loadproperties srcfile="build.properties" />
+	<import file="librariesDefinition.xml" />
+		
+	<target name="buildCopyPdiPackage" depends="build">
+		<!--<jar  destfile="${distFolder}/${copyPdiPacket}">
+			<fileset dir="${copyPdiBuild}" />
+		</jar>-->
+	</target>
+
+	<target name="build" depends="clean" description="this target compile source of copy project">
+		<javac srcdir="${copyPdiSrc}" destdir="${copyPdiBuild}" debug="${FOR_DEBUG}" target="${JAVA_TARGET}">
+			<classpath refid="o3-dpacs-copy.library"/>
+		</javac>
+		
+		<copy todir="${copyPdiBuild}" includeemptydirs="true">
+			<fileset dir="${copyPdiSrc}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		
+		<manifest file="${mapsPdiBuild}/META-INF/MANIFEST.MF">
+			<attribute name="Class-Path" value="o3-dpacs-pdi-copy.jar" />
+			<attribute name="Main-Class" value="it.pdi.executor.ExecutorPDI"/>  
+		</manifest>
+		
+		<jar manifest="${copyPdiBuild}/META-INF/MANIFEST.MF" jarfile="${distFolder}/o3-dpacs-pdi-copy.jar" basedir="${copyPdiBuild}" />
+	</target>
+
+	<target name="clean" description="thie target cleanup build folder">
+		<delete includeemptydirs="true" failonerror="false">
+			<fileset dir="${copyPdiBuild}" />
+		</delete>
+		<mkdir dir="${copyPdiBuild}" />
+	</target>
+</project>

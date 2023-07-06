@@ -1,0 +1,11 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:rich="http://richfaces.ajax4jsf.org/rich"
+xmlns:a4j="http://richfaces.org/a4j">
+<rich:panel>
+	<h:outputText>
+		Sorry, there isn't any viewer for this type of document...
+	</h:outputText>
+</rich:panel>
+</html>

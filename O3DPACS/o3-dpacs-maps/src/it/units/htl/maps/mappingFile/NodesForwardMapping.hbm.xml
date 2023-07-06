@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-Aug-2009 15:18:34 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="it.units.htl.maps.NodesForwardMapping" table="NodesForwardMapping" >
+        <composite-id name="id" class="it.units.htl.maps.NodesForwardMappingId">
+            <key-property name="sourceNodeFk" type="long">
+                <column name="sourceNodeFK" />
+            </key-property>
+            <key-property name="targetNodeFk" type="long">
+                <column name="targetNodeFK" />
+            </key-property>
+        </composite-id>
+        <property name="sortOrder" type="java.lang.Byte">
+            <column name="sortOrder" />
+        </property>
+    </class>
+</hibernate-mapping>

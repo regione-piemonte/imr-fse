@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="autoRoutingDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/autoRoutingDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+	<persistence-unit name="hl7DS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/hl7DS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+		<persistence-unit name="storageDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/storageDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+		<persistence-unit name="stgCmtDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/stgCmtDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+		<persistence-unit name="queryDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/queryDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+		<persistence-unit name="moveDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/moveDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+		<persistence-unit name="mppsDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/mppsDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+		<persistence-unit name="dbDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/dbDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+		<persistence-unit name="RptMgrDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/RptMgrDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+		<persistence-unit name="wadoDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/wadoDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+		<persistence-unit name="imAvailDS">
+	  <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>jdbc/imAvailDS</jta-data-source>
+      <properties>
+         	<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+      </properties>
+	</persistence-unit>
+</persistence>

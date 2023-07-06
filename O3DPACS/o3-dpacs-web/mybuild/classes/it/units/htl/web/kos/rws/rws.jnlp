@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- jnlp File for O3-RWS --> 
+<jnlp 
+  spec="1.0+" 
+  codebase="___CODEBASE___" > 
+  <information> 
+    <title>O3-RWS</title> 
+    <vendor>O3-Consortium</vendor> 
+    <homepage href="http://www.o3consortium.eu"/> 
+    <description>O3-RWS</description> 
+    <description kind="short">Workstation DICOM</description> 
+    <icon href="LogoO3.jpg"/> 
+    <!-- <offline-allowed/> -->
+    <shortcut online="false">
+      <desktop/>
+      <menu submenu="O3-Consortium"/>
+    </shortcut>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <property name="FROMJWS" value="FROMJWS"/>
+  <resources> 
+    <j2se version="1.6.+" 
+	href="http://java.sun.com/products/autodl/j2se"
+	java-vm-args="-Xmx512m -Dsun.java2d.d3d=false" />
+
+	<jar href="AbsoluteLayout.jar"/>
+	<jar href="dcm4che-audit-2.0.11.jar"/>
+	<jar href="dcm4che-core-2.0.18.jar"/>
+	<jar href="dcm4che-image-2.0.18.jar"/>
+	<jar href="dcm4che-imageio-2.0.18.jar"/>
+	<jar href="dcm4che-imageio-rle-2.0.18.jar"/>
+	<jar href="dcm4che-net-2.0.10.jar"/>
+	<jar href="dcm4che.jar"/>
+	<jar href="FXPlayer.jar"/>
+	<jar href="iText-2.1.7.jar"/>
+	<jar href="jdom.jar"/>
+	<jar href="log4j-properties.jar"/>
+	<jar href="log4j-1.2.15.jar"/>	
+	<jar href="O3-RWS.jar" main="true"/> 
+	<jar href="O3-WAV.jar"/>
+	<jar href="O3RWS-SR.jar"/>
+	<jar href="poi-3.1-FINAL-20080629.jar"/>
+	<jar href="poi-contrib-3.1-FINAL-20080629.jar"/>
+	<jar href="poi-scratchpad-3.1-FINAL-20080629.jar"/>
+	<jar href="slf4j-api-1.5.6.jar"/>
+	<jar href="slf4j-log4j12-1.5.6.jar"/>
+	<jar href="swing-layout-1.0.4.jar"/>    	
+	<extension href="__JAICODEBASE___"/> 
+   </resources>
+  <application-desc main-class="it.units.htl.O3ws.O3WS">
+  <argument>-datasource=string</argument>
+  <argument>-data=<![CDATA[__CONFIGURATION__]]></argument>
+  </application-desc> 
+</jnlp> 

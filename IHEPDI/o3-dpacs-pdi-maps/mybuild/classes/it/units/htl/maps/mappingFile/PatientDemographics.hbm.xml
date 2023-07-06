@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+
+	<class name="it.units.htl.maps.PatientDemographics" table="PatientDemographics">
+		<id name="pk" type="java.lang.Long">
+			<column name="pk" />
+			<generator class="sequence">
+				<param name="sequence">PATIENTDEMOGRAPHICS_PK_SEQ</param>
+			</generator>
+		</id>
+<!-- 
+		<property generated="never" lazy="false" name="ethnicGroup" type="string">
+			<column length="16" name="ethnicGroup" />
+		</property>
+
+		<property generated="never" lazy="false" name="patientComments" type="string">
+			<column length="256" name="patientComments" />
+		</property>
+
+		<property generated="never" lazy="false" name="race" type="string">
+			<column length="32" name="race" />
+		</property>
+
+		<property generated="never" lazy="false" name="patientAddress" type="string">
+			<column length="64" name="patientAddress" />
+		</property>
+
+		<property generated="never" lazy="false" name="patientCity" type="string">
+			<column length="64" name="patientCity" />
+		</property>
+
+		<property generated="never" lazy="false" name="patientAccountNumber" type="string">
+			<column length="32" name="patientAccountNumber" />
+		</property>
+
+		<property generated="never" lazy="false" name="patientIdentifierList" type="string">
+			<column length="32" name="patientIdentifierList" />
+		</property>  -->
+
+		<property generated="never" lazy="false" name="numberOfPatientRelatedStudies" type="integer">
+			<column name="numberOfPatientRelatedStudies" />
+		</property>
+		
+		 <many-to-one name="patient" class="it.units.htl.maps.Patients" column="patientFk" unique="true" />  
+		
+	</class>
+</hibernate-mapping>

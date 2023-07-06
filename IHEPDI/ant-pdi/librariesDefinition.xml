@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="JBossLibraries" basedir="..">
+   
+	<path id="o3-dpacs-pdi-maps.library">
+        <pathelement location="${mapsPdiLib}/commons-logging-1.1.jar"/>
+        <pathelement location="${mapsPdiLib}/hibernate-core-4.3.11.Final.jar"/>
+        <pathelement location="${mapsPdiLib}/hibernate-entitymanager-4.3.11.Final.jar"/>
+        <pathelement location="${mapsPdiLib}/log4j-1.2.17.jar"/>
+		<pathelement location="${mapsPdiLib}/commons-lang3-3.12.0.jar"/>
+		<pathelement location="${mapsPdiLib}/javax.persistence-api-2.2.jar"/>
+    </path>
+	
+	<path id="o3-dpacs-pdi.library">	
+		
+		<fileset dir="${webFolder}/src/main/webapp/WEB-INF/lib" includes="**/*.jar"/>
+    
+    </path>
+	
+	<path id="o3-dpacs-copy.library">	
+		
+    </path>
+	
+</project>

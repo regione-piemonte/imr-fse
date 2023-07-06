@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-gen-2009 13.44.40 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true"
+  name="it.pdi.maps.To3pdiJob" table="TO3PDI_JOB">
+  <id name="pk" type="java.lang.Long">
+   <column name="pk" unique="true"/>
+   <generator class="sequence">
+    <param name="sequence">TO3PDI_JOB_PK_SEQ</param>
+   </generator>
+  </id>
+  <property generated="never" lazy="false" name="jobid" type="string">
+   <column length="20" name="job_id" not-null="false" unique="false"/>
+  </property>
+  <property generated="never" lazy="false" name="datainizio" type="date">
+   <column name="datainizio" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="datafine" type="date">
+   <column name="datafine" not-null="false"/>
+  </property>
+  <property generated="never" lazy="false" name="codice" type="string">
+   <column length="18" name="codice" not-null="false"/>
+  </property>
+  <property generated="never" lazy="false" name="descrizione" type="string">
+   <column length="128" name="descrizione" not-null="false"/>
+  </property>
+  <property generated="never" lazy="false" name="operazione" type="string">
+   <column length="64" name="operazione" not-null="false"/>
+  </property>
+  <property generated="never" lazy="false" name="stato" type="string">
+   <column length="64"  name="stato" not-null="false"/>
+  </property>
+  <property generated="never" lazy="false" name="checksum" type="string">
+   <column length="64"  name="checksum" not-null="false"/>
+  </property>
+  <property generated="never" lazy="false" name="zipname" type="string">
+   <column length="64"  name="zipname" not-null="false"/>
+  </property>
+  <property generated="never" lazy="false" name="request" type="string">
+   <column length="64"  name="request" not-null="false"/>
+  </property>
+ </class>
+</hibernate-mapping>

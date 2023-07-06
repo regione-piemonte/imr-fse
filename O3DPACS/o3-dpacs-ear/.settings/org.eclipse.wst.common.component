@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="o3-dpacs-ear">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="o3-dpacs-core-ejb.jar" deploy-path="/" handle="module:/resource/o3-dpacs-core-ejb/o3-dpacs-core-ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jai_imageio.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/jai_imageio.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="clibwrapper_jiio.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/clibwrapper_jiio.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="axis2-transport-local-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/axis2-transport-local-1.5.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="axis2-transport-http-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/axis2-transport-http-1.5.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hapi-base-2.1.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/hapi-base-2.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dcm4che-core-2.0.24.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/dcm4che-core-2.0.24.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dcm4che-image-2.0.24.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/dcm4che-image-2.0.24.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="axis2-kernel-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/axis2-kernel-1.5.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dcm4che-net-2.0.24.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/dcm4che-net-2.0.24.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xuggle-xuggler.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/xuggle/xuggle-xuggler.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="axis2-adb-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/axis2-adb-1.5.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dcm4che.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/dcm4che.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jaxb-impl.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/jaxb-impl.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jmxtools.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/jmxtools.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dcm4che-imageio-2.0.24.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/dcm4che-imageio-2.0.24.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="o3-dpacs-web.war" deploy-path="/" handle="module:/classpath/lib/o3-dpacs-web/mybuild/o3-dpacs-web.war">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="o3-dpacs-wado.war" deploy-path="/" handle="module:/classpath/lib/o3-dpacs-wado/mybuild/o3-dpacs-wado.war">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dcm4che-audit-2.0.24.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/dcm4che-audit-2.0.24.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jdom-1.1.3.redhat-2.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/jdom-1.1.3.redhat-2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="o3-dpacs-wado.war" deploy-path="/" handle="module:/resource/o3-dpacs-wado/o3-dpacs-wado">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="o3-dpacs-web.war" deploy-path="/" handle="module:/resource/o3-dpacs-web/o3-dpacs-web">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="o3-dpacs-maps.jar" deploy-path="/lib" handle="module:/resource/o3-dpacs-maps/o3-dpacs-maps">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fop.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/fop.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="avalon-framework-4.2.0.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/avalon-framework-4.2.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-io-1.3.1.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/commons-io-1.3.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xmlgraphics-commons-1.3.1.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/xmlgraphics-commons-1.3.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xercesimpl.jar" deploy-path="/lib" handle="module:/classpath/lib/o3-dpacs-core-ejb/lib/xercesimpl.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

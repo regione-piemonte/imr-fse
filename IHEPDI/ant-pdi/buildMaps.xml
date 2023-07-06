@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs-pdi-maps.jar" default="build" basedir=".">
+	<loadproperties srcfile="build.properties" />
+	<import file="librariesDefinition.xml" />
+		
+	<target name="buildMapsPdiPackage" depends="build">
+		<jar destfile="${distFolder}/${mapsPdiPacket}">
+			<fileset dir="${mapsPdiBuild}" />
+		</jar>
+	</target>
+
+	<target name="build" depends="clean" description="this target compile source of maps project">
+		<javac srcdir="${mapsPdiSrc}" destdir="${mapsPdiBuild}" debug="${FOR_DEBUG}" target="${JAVA_TARGET}">
+			<classpath refid="o3-dpacs-pdi-maps.library"/>
+		</javac>
+		
+		<copy todir="${mapsPdiBuild}" includeemptydirs="true">
+			<fileset dir="${mapsPdiSrc}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean" description="thie target cleanup build folder">
+		<delete includeemptydirs="true" failonerror="false">
+			<fileset dir="${mapsPdiBuild}" />
+		</delete>
+		<mkdir dir="${mapsPdiBuild}" />
+	</target>
+</project>

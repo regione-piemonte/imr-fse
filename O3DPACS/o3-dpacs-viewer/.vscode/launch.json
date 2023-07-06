@@ -1,0 +1,29 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Viewer",
+      "url": "http://localhost:3000/viewer.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:3000/?studyUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.3.0",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome without Alert",
+      "url": "http://localhost:3000/?studyUID=1.3.6.1.4.1.5962.99.1.2237260787.1662717184.1234892907507.3.0&showSafetyAlert=false",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

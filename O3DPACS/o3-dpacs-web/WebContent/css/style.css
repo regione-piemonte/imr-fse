@@ -1,0 +1,514 @@
+/************** General ***************/
+html,body {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	font: 10px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	color: #666666;
+	text-decoration: none;
+/* footer */
+}
+
+a:hover {
+	color: #1D223B !important;
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+        background-color: #FFFFFF;
+}
+
+input {
+/* back to search button, change password and logout */
+	margin: 0px;
+	padding: 1px 2px;
+	background-color: #627FC0;
+	/*background-image: url(../img/background2.bmp); */
+	border: 1px solid #627FC0;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	color: #FFFFFF;
+}
+
+p {
+	margin: 0px;
+	padding: 5px 0px;
+	text-align: justify;
+}
+
+/************** Table ***************/
+table {
+	margin: 0px;
+	padding: 0px;
+}
+
+.table100 {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+#navigationTable {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	color: #FFFFFF;
+
+}
+
+#navigationTable td {
+	margin: 0px;
+	padding: 0px 25px;
+}
+
+#navigationTable td form{
+        background-color: #627FC0;
+        color: white;
+}
+
+#navigationTable td form #indexform\:username, #navigationTable td form #indexform\:password, #fgtPwd #fgtPwd\:email {
+        background-color: white !important;
+        color: black;
+}
+
+#navigationTable td form a, #fgtPwd a{
+        font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+        color: white !important;
+}
+
+#languageForm{
+	display: inline;
+}
+
+#fpContainer td {
+    background-color: #FFFFFF;
+}
+#fgtPwd div {
+    background-color: #627FC0;
+}
+
+
+th {
+	margin: 0px;
+	padding: 0px 2px;
+	height: 25px;
+	/* background-image: url(../img/background.bmp); */
+	border: 1px solid #627FC0;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif !important;
+	font-weight: bold;
+	color: #FFFFFF !important;
+	text-align: left;
+	vertical-align: top;
+        background-color: #627FC0;
+}
+
+.noHeader{
+	background-image: none;
+	height: 20px;
+	border-width: 0px;
+	padding-top: 4px;
+}
+
+.indented{
+	margin-left: 10px;
+}
+
+td {
+	margin: 0px;
+	padding: 0px 2px;
+	font: 11px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif !important;
+}
+
+.contentTable {
+	margin: 0px;
+	padding: 10px;
+	width: auto;
+	background-color: #DDEEDD;
+	border: 1px solid #FFFFCC;
+}
+
+.evenRow {
+	background-color: #BCD5F3;
+        border: 1px solid #BCD5F3;
+}
+
+.selectedRow {
+	background-color: #9CC3ED;
+}
+
+.column10 {
+	width: 10px;
+	text-align: center;
+}
+
+.none {
+	
+}
+
+.adaptiveCell {
+	width: 100%;
+	text-align: center;
+}
+
+.adaptiveCell a {
+	width: 100%;
+	height: 100%;
+}
+
+.adaptiveCell a img {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+/************** Structure ***************/
+div#container {
+	margin: 0px;
+	padding: 0px;
+}
+
+div#header {
+	margin: 0px;
+	padding: 0px 25px;
+	background-color: #BCD5F3;
+	border-left: 1px solid #BCD5F3;
+	border-right: 1px solid #BCD5F3;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	text-align: left;
+}
+
+div#navigation {
+	margin: 0px;
+	padding: 0px;
+	background-color: #627FC0;
+	/* background-image: url(../img/background.bmp); */
+	border: 1px solid #627FC0;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+}
+
+div#wrapper {
+	margin: 0px;
+	padding: 25px;
+	/*border-left: 1px solid #333333;
+        border-right: 1px solid #333333;
+        border-bottom: 1px solid #333333;*/
+	text-align: left;
+}
+
+div#content {
+	margin: 0px;
+	padding: 10px;
+	width: auto;
+	background-color: #FFFFFF;
+	border: 0px solid #BCD5F3;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	text-align: justify;
+	color: #333333;
+}
+
+div#content320 {
+	margin: 0px;
+	padding: 10px;
+	width: 320px;
+	background-color: #DDDDDD;
+	border: 1px solid #333333;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	color: #333333;
+}
+
+div.contentNodeForm {
+	margin: 0px;
+	padding: 10px;
+	width: 400px;
+	background-color: #DDDDDD;
+	border: 1px solid #333333;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	color: #333333;
+}
+
+div#content400 {
+	margin: 0px;
+	padding: 10px;
+	width: 400px;
+	background-color: #FFFFFF;
+	border: 1px solid #333333;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	color: #333333;
+}
+
+div#footer {
+	margin: 35px 0px 0px 0px;
+	padding: 5px 0px;
+	width: 100%;
+	height: 15px;
+	border-top: 1px dashed #333333;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	text-align: center;
+}
+
+#jmxManagement {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 400px;
+}
+
+/************** Title - Menu ***************/
+#headerTitle {
+	margin: 0px;
+	padding: 3px 10px;
+	font: 20px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	color: #333333;
+	letter-spacing: 3px;
+}
+
+#contentTitle {
+	margin: 0px;
+	padding: 3px;
+	font: 18px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	color: #333333;
+	letter-spacing: 1px;
+	text-align: left;
+}
+
+#footer_sx {
+	margin: 0px;
+	padding: 0px;
+	width: 400px;
+	float: left;
+	text-align: left;
+}
+
+#menu ul {
+	margin: 5px 0px;
+	padding: 0px 10px;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+#menu li {
+	display: inline;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+}
+
+#menu ul li a,.link {
+	margin: 2px;
+	padding: 2px 7px;
+	/*background-image: url(../img/background2.bmp);*/
+	border: 1px solid #627FC0;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	color: #FFFFFF;
+        background-color: #627FC0;
+	text-decoration: none;
+}
+
+#menu ul li a:hover,.link:hover {
+	color: #333333;
+	background-position: 0px -20px;
+}
+
+/************** Images ***************/
+#logoSmall {
+	margin: 0px;
+	padding: 0px;
+	height: 65px;
+	width: 65px;
+	background: url(../img/logo_small.png) no-repeat;
+}
+
+#logoW3C_xhtml {
+	margin: 0px 80px 0px 0px;
+	padding: 0px;
+	height: 15px;
+	width: 80px;
+	float: left;
+	background: url(../img/w3c_xhtml10.png) no-repeat;
+}
+
+#logoW3C_css {
+	margin: 0px;
+	padding: 0px;
+	height: 15px;
+	width: 80px;
+	float: left;
+	background-image: url(../img/w3c_css.png);
+}
+
+/******Merge Panel*********/
+td.evidenced {
+	font-weight: bold;
+}
+
+td.question {
+	width: 150px;
+	background-color: silver;
+}
+
+.merge-header {
+	font: 14px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 2.4pt;
+}
+
+.mergeToolColumn1{
+	vertical-align: top;
+	width: 520px;
+}
+
+.mergeToolColumn2{
+	vertical-align: top;
+	width: 520px;
+}
+
+.backAction {
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.messagePanelText {
+	font-size: 12pt !important;
+	padding-top: 20px !important;
+	text-align: center !important;
+}
+
+.col25 {
+	width: 25%;
+}
+
+.col75 {
+	width: 75%;
+	overflow: scroll;
+}
+
+div#contentRemove {
+	margin: 0px;
+	padding: 10px;
+	width: 520px;
+	background-color: #DDDDDD;
+	border: 1px solid #333333;
+	font: 12px "Lucida Sans Unicode", "Lucida Sans Unicode Regular", "Lucida Grande", sans-serif;
+	text-align: justify;
+	color: #333333;
+}
+
+div#contentRemove .reason {
+	width: 100%;
+	display: block;
+}
+
+.info {
+	color: red;
+	font-size: 9px;
+	font-weight: bold;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+table.studiesTable {
+	width: 95%;
+	display: inline-table;
+	text-align: left;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+table.studiesTable tr td {
+	/*border: solid 1px red;
+	text-align: left;
+	padding: 0px !important;
+	word-wrap: break-word;
+	float: left;*/
+}
+
+.treeButton {
+	width: 12px;
+	height: 12px;
+	border-width: 0px;
+}
+
+.instructions {
+	font-size: 11pt;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+
+tr.top {
+	vertical-align: top;
+}
+
+.inputLabel {
+	float: left;
+	clear: left;
+	width: 100px;
+}
+
+.inputField {
+	float: left;
+	clear: right;
+}
+
+.inputField textarea {
+	width: 550px;
+	height: 500px;
+}
+
+.inputRow {
+	float: left;
+	clear: both;
+}
+.scrollerGroup {
+	width:100%;
+}
+.scrollerGroup .innerScroller{
+	margin:0px auto auto;
+	}
+.scrollerGroup .ex {
+	text-align: left;
+}
+
+.disabledTextField{
+	color: #888;
+	background-color:#EEE;
+}
+
+.enabledTextField{
+	color: inherit;
+	background-color: inherit;
+}
+
+
+.studySearchLabelColumn  {
+	width: 150px;
+}
+
+.studySearchInputColumn  {
+	width: 180px;
+}
+.studySearchInputColumn  input{
+	width: 150px;
+}
+
+.studySearchMessageColumn  {
+	width: auto;
+	color: red;
+}
+.indentedFormLabel{
+	margin-left: 10px;
+}

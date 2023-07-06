@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service" 
+    class="flex.messaging.services.RemotingService">
+
+    <adapters>
+        <adapter-definition id="java-object" class="flex.messaging.services.remoting.adapters.JavaAdapter" default="true"/>
+    </adapters>
+
+    <default-channels>
+        <channel ref="my-amf"/>
+        <channel ref="my-secure-amf"/>
+    </default-channels>
+	
+	<destination id="FlexSessionHandler" >
+       <properties>
+        <source>eu.o3c.o3e.flex.helpers.FlexSessionHandler</source>
+        <scope>session</scope>
+       </properties>
+    </destination>
+    
+    <destination id="StudiesVerifierHnd" >
+       <properties>
+        <source>eu.o3c.o3e.flex.helpers.StudiesVerifierHandler</source>
+        <scope>session</scope>
+       </properties>
+    </destination>
+    
+    
+    <destination id="StudiesVerificationTools" >
+       <properties>
+        <source>eu.o3c.o3e.flex.helpers.StudyVerificationTools</source>
+        <scope>session</scope>
+       </properties>
+    </destination>
+    
+    
+    <destination id="OperatorsStatsHandler" >
+       <properties>
+        <source>eu.o3c.o3e.flex.helpers.OperatorsStatsHandler</source>
+        <scope>session</scope>
+       </properties>
+    </destination>
+    
+    <destination id="MergeTools" >
+       <properties>
+        <source>eu.o3c.o3e.flex.helpers.MergeTools</source>
+        <scope>session</scope>
+       </properties>
+    </destination>
+    
+    <destination id="ReconciliationHandler" >
+       <properties>
+        <source>eu.o3c.o3e.flex.helpers.ReconciliationHandler</source>
+        <scope>session</scope>
+       </properties>
+    </destination>
+    
+
+</service>

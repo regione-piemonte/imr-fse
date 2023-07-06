@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs-core.jar" basedir="." default="build">
+	<loadproperties srcfile="build.properties" />
+	<import file="librariesDefinition.xml" />
+	
+	<path id="runtimeCompiledLibraries">
+		<pathelement location="${distFolder}/${mapsPacket}" />
+		<pathelement location="${distFolder}/${corePacket}" />
+	</path>
+
+	<target name="buildPackagedWeb" depends="build">		
+
+		<war destfile="${distFolder}/${webPacket}" webxml="${webFolder}/WebContent/WEB-INF/web.xml" compress="false" manifest="${webFolder}/WebContent/META-INF/MANIFEST.MF">
+			<classes dir="${webBuild}">
+			   <include name = "**/*.*"/>
+			</classes>
+			
+		    <fileset dir = "${webFolder}/WebContent">
+			   <include name = "**/*.*"/>
+		    </fileset>
+
+		</war>		
+	</target>
+
+	<target name="build" depends="clean, compileDependencies">
+		<echo message="Compiling source of o3-dpacs-web..." />
+
+		<javac srcdir="${webSrc}" destdir="${webBuild}" debug="${FOR_DEBUG}" target="${JAVA_TARGET}">
+			<compilerarg value="-XDignore.symbol.file -Xlint:deprecation -Xlint:unchecked" />
+			<classpath>
+				<path refid="o3-dpacs-core-ejb.library" />
+				<path refid="o3-dpacs-wado.library" />
+				<path refid="o3-dpacs-web.library" />
+
+				<path refid="runtimeCompiledLibraries" />
+			</classpath>
+		</javac>
+		<echo message="Coping file that aren't class" />
+		<copy todir="${webBuild}" includeemptydirs="true">
+			<fileset dir="${webSrc}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<echo message="The file are ready for packaging" />
+	</target>
+
+	<target name="compileDependencies">
+		<ant antfile="buildMaps.xml" target="buildMapsPackage" />
+		<ant antfile="buildCore.xml" target="buildCorePackage" />
+	</target>
+
+	<target name="clean">
+		<echo message="Cleaning up the build directory of o3-dpacs-web" />
+		<delete dir="${webBuild}" />
+		<mkdir dir="${webBuild}" />
+	</target>
+</project>

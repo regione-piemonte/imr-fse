@@ -1,0 +1,47 @@
+<jboss-deployment-structure>
+	<deployment>
+	<!--  
+	    <resources>
+	      <resource-root path="WEB-INF/classes" />
+	    </resources>
+    -->	
+    	<dependencies>
+			<module name="javax.faces.api" slot="1.2" export="true" />
+			<module name="com.sun.jsf-impl" slot="1.2" export="true" />
+ 
+	        <module name="o3-dpacs.configuration" export="true"/>
+
+
+  		</dependencies>
+  		
+  		<exclusions>
+            <module name="org.dcm4che2.*"/>
+        </exclusions>
+  		
+	</deployment>
+	<sub-deployment name="o3-dpacs-core-ejb.jar">
+		<dependencies>
+		<!--  
+            <module name="o3-dpacs.configuration"/>
+            <module name="o3-dpacs.services"/>
+         -->   
+            <!--  
+ 			<module name="org.dcm4che" slot="main" export="true">
+                <imports>
+                    <include path="org.dcm4che**"/>
+                </imports>
+			</module>
+			-->
+		</dependencies>
+	</sub-deployment>	
+	<sub-deployment name="o3-dpacs-web.war">
+		<exclusions>
+			<module name="javax.faces.api" slot="main" />
+			<module name="com.sun.jsf-impl" slot="main" />
+		</exclusions>
+		<dependencies>
+			<module name="javax.faces.api" slot="1.2" />
+			<module name="com.sun.jsf-impl" slot="1.2" />
+		</dependencies>
+	</sub-deployment>
+</jboss-deployment-structure>

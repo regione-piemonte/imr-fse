@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs-core.jar" basedir="." default="build">
+	<loadproperties srcfile="build.properties" />
+	<import file="librariesDefinition.xml" />
+	
+	<path id="runtimeCompiledLibraries">
+		<pathelement location="${distFolder}/${mapsPacket}" />
+	</path>
+
+	<target name="buildCorePackage" depends="build">
+		<jar destfile="${distFolder}/${corePacket}" compress="false" manifest="${coreSrc}/META-INF/MANIFEST.MF">
+			<fileset dir="${coreBuild}" />
+		</jar>
+	</target>
+
+	<target name="build" depends="clean, compileDependencies">
+		<echo message="Compiling source of o3-dpacs-core..." />
+		<javac srcdir="${coreSrc}" destdir="${coreBuild}" debug="${FOR_DEBUG}" target="${JAVA_TARGET}">
+			<compilerarg value="-Xlint:none" />
+			<classpath>
+				<path refid="o3-dpacs-core-ejb.library" />
+				<path refid="runtimeCompiledLibraries" />
+			</classpath>
+		</javac>
+		<echo message="Coping file that aren't class" />
+		<copy todir="${coreBuild}" includeemptydirs="true">
+			<fileset dir="${coreSrc}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<echo message="The file are ready for packaging" />
+	</target>
+
+	<target name="compileDependencies">
+		<ant antfile="buildMaps.xml" target="buildMapsPackage" />
+	</target>
+
+	<target name="clean">
+		<echo message="Cleaning up the build directory of o3-dpacs-core" />
+		<delete dir="${coreBuild}" />
+		<mkdir dir="${coreBuild}" />
+	</target>
+</project>

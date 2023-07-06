@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: o3-dpacs-core-ejbClient.jar
+Dependencies: org.jboss.as.jmx
+Specification-Title: o3-dpacs
+Specification-Version: 2.23.0

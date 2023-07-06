@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs.ear" default="buildEarPackage" basedir=".">
+	<loadproperties srcfile="build.properties" />
+	<import file="librariesDefinition.xml" />
+
+	<target name="buildEarPackage" depends="clean, buildWeb">
+		<copy todir="${earBuild}/lib" includeemptydirs="true">
+		
+			<fileset dir="${distFolder}">
+				<include name="o3-dpacs-pdi-maps.jar" />
+				<include name="o3-dpacs-pdi-copy.jar" />
+			</fileset>
+		
+		</copy>
+		
+		<ear destfile="${distFolder}/${earPacket}" appxml="${earFolder}/EarContent/META-INF/application.xml" compress="false">
+			<fileset dir="${distFolder}" includes="o3-dpacs-pdi.war" />
+		
+			<fileset dir = "${earFolder}/EarContent">
+			   <include name = "**/*.*"/>
+		    </fileset>		
+			
+			<fileset dir = "${earBuild}">
+			   <include name = "**/*.*"/>
+		    </fileset>				
+		</ear>
+		
+	</target>
+	
+	<target name="buildEarPackageForO3" depends="clean, buildWeb">
+		<copy todir="${earBuild}/lib" includeemptydirs="true">
+		
+			<fileset dir="${distFolder}">
+				<include name="o3-dpacs-pdi-maps.jar" />
+				<include name="o3-dpacs-pdi-copy.jar" />
+			</fileset>
+		
+		</copy>
+		
+		<ear destfile="${distFolder}/${earPacket}" appxml="${earFolder}/EarContent/META-INF/application.xml" compress="false">
+			<fileset dir="${distFolder}" includes="o3-dpacs-pdi.war" />
+		
+			<fileset dir = "${earFolder}/EarContent">
+			   <include name = "**/*.*"/>
+		    </fileset>		
+			
+			<fileset dir = "${earBuild}">
+			   <include name = "**/*.*"/>
+		    </fileset>				
+		</ear>
+				
+		<copy file="${distFolder}/${earPacket}" todir="${distFolderPACS}/ant/dist"/>
+		<copy file="${distFolder}/o3-dpacs-pdi-copy.jar" todir="${distFolderPACS}/ant/dist"/>
+		
+	</target>
+	
+	<target name="buildEarPackageFromO3" depends="clean, buildWeb">
+		<copy todir="${earBuild}/lib" includeemptydirs="true">
+		
+			<fileset dir="${distFolder}">
+				<include name="o3-dpacs-pdi-maps.jar" />
+				<include name="o3-dpacs-pdi-copy.jar" />
+			</fileset>
+		
+		</copy>
+		
+		<ear destfile="${distFolder}/${earPacket}" appxml="${earFolder}/EarContent/META-INF/application.xml" compress="false">
+			<fileset dir="${distFolder}" includes="o3-dpacs-pdi.war" />
+		
+			<fileset dir = "${earFolder}/EarContent">
+			   <include name = "**/*.*"/>
+		    </fileset>		
+			
+			<fileset dir = "${earBuild}">
+			   <include name = "**/*.*"/>
+		    </fileset>				
+		</ear>
+				
+		<copy file="${distFolder}/${earPacket}" todir="${distFolderPACS}/ant/dist"/>
+		<copy file="${distFolder}/o3-dpacs-pdi-copy.jar" todir="${distFolderPACS}/ant/dist"/>
+		
+	</target>
+
+
+	<target name="deploy" depends="undeploy, buildEarPackage">
+		<copy file="${distFolder}/${earPacket}" todir="${SERVER_DEPLOY_FOLDER}" />
+		<sleep seconds="5" />
+	</target>
+	<target name="undeploy">
+		<delete file="${SERVER_DEPLOY_FOLDER}/${earPacket}" failonerror="true" />
+	</target>
+
+
+	<target name="buildWeb">
+		<ant antfile="buildWeb.xml" target="buildPackagedWeb" />
+	</target>
+	
+	<target name="clean">
+		<echo message="Cleaning up the ear directory of o3-dpacs-pdi" />
+		<delete dir="${earBuild}" />
+		<mkdir dir="${earBuild}"/>
+		<!-- <delete file="${earBuild}.*"/> -->
+	</target>
+</project>

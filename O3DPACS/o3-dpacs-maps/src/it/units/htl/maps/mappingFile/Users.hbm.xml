@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 3, 2009 9:48:44 AM by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping default-lazy="false">
+ <class name="it.units.htl.maps.Users" table="Users">
+  <id name="pk" type="java.lang.Long">
+   <column name="pk"/>
+   <generator class="sequence">
+    <param name="sequence">USERS_PK_SEQ</param>
+   </generator>
+  </id>
+  <property generated="never" lazy="false" name="lastName" type="string">
+   <column length="60" name="lastName" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="firstName" type="string">
+   <column length="60" name="firstName" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="userName" type="string">
+   <column length="60" name="userName" not-null="true" unique="true"/>
+  </property>
+  <property generated="never" lazy="false" name="email" type="string">
+   <column length="60" name="email" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="roleFk" type="int">
+   <column name="roleFK" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="realLifeRole" type="string">
+   <column length="60" name="realLifeRole"/>
+  </property>
+  <property generated="never" lazy="false" name="lastLoginDate" type="date">
+   <column length="0" name="lastLoginDate"/>
+  </property>
+  <property generated="never" lazy="false" name="lastLoginTime" type="time">
+   <column length="0" name="lastLoginTime"/>
+  </property>
+  <property generated="never" lazy="false" name="password" type="string" insert="true" update="false">
+   <column length="60" name="password" not-null="true"/>
+  </property>
+    <property generated="never" lazy="false" name="pwdExpirationDate" type="date">
+   <column length="0" name="pwdExpirationDate"/>
+  </property>
+ </class>
+</hibernate-mapping>

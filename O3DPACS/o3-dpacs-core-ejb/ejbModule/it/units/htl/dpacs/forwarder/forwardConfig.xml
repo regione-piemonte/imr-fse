@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+	<!-- Seconds after which the first schedule will run -->
+	<firstRunAfter>60</firstRunAfter>
+	
+    <!-- Seconds between two checks for forwarding (86400 = 1 day) -->
+    <forwardPeriod>150</forwardPeriod>
+    
+    <!-- Number of studies to forward per cycle (0 = all) NOT MANAGED AT ALL -->
+    <studiesPerCycle>0</studiesPerCycle>
+    
+    <!-- Seconds which have to pass from its insertion before a study can be moved (3600 = 1 hour) -->
+    <forwardTolerance>40</forwardTolerance>
+    
+    <!-- Number of schedule processes to check backwards; 0=do not check backwards  -->
+    <forwardBackProcesses>1</forwardBackProcesses>
+    
+    <!-- 0: do not delete studies when forwarded 
+    	 1: delete studies when forwarded to all target nodes -->
+    <deleteForwarded>1</deleteForwarded>
+    
+    <!-- The Calling AETitle used when forwarding studies -->
+    <forwardAeTitle>O3-DPACS</forwardAeTitle>
+    
+    <!-- The Calling AETitle used when forwarding studies -->
+    <forwardIp>127.0.0.1</forwardIp>
+    
+    <!-- The Calling AETitle used when forwarding studies -->
+    <forwardPort>4568</forwardPort>
+    
+    <!-- The protocol used in the forward url (e.g. dicom, dicom-tls) -->
+    <forwardProtocol>dicom</forwardProtocol>
+    
+</root>

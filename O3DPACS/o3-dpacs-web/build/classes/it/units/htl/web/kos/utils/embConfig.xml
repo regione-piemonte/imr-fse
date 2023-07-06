@@ -1,0 +1,37 @@
+<Root>
+ <Configuration>
+ </Configuration>
+ <Integration>
+  <RwsStyle>lite</RwsStyle>
+  <SecureConnection>false</SecureConnection>
+  <RetrieveMode>wadourl</RetrieveMode>
+ </Integration>
+ <Wtl>
+  <Patient>
+  <PatientName/>
+  <PatientID/>
+  <PatientBirthDate/>
+  <PatientSex/>
+  <Study>
+   <StudyInstanceUID/>
+   <AccessionNumber/>
+   <StudyDate/>
+   <StudyDescription/>
+   <Series>
+    <SeriesInstanceUID/>
+    <SeriesDate/>
+    <SeriesTime/>
+    <Modality/>
+    <SeriesDescription/>
+    <SeriesNumber/>
+    <Instance>
+     <SOPInstanceUID/>
+     <ReferencedFileID/>
+     <InstanceNumber/> 
+     <ReferencedSOPClassUID/>
+    </Instance>  
+   </Series>
+  </Study>
+  </Patient>
+ </Wtl>
+</Root>

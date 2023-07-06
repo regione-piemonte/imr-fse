@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="o3-dpacs-pdi-core.jar" basedir="." default="build">
+	<loadproperties srcfile="build.properties" />
+	<import file="librariesDefinition.xml" />
+	 
+	<path id="runtimeCompiledLibraries">
+		<pathelement location="${distFolder}/${mapsPdiPacket}" />
+	</path>
+	
+	<target name="buildPackagedWeb" depends="build">		
+
+		<war destfile="${distFolder}/${webPacket}" webxml="${webFolder}/src/main/webapp/WEB-INF/web.xml" compress="false" manifest="${webFolder}/src/main/webapp/META-INF/MANIFEST.MF">
+			<classes dir="${webBuild}">
+			   <include name = "**/*.*"/>
+			</classes>
+			
+		    <fileset dir = "${webFolder}/src/main/webapp">
+			   <include name = "**/*.*"/>
+		    </fileset>
+
+		</war>		
+	</target>
+
+	<target name="build" depends="clean, compileDependencies">
+		<echo message="Compiling source of o3-dpacs-pdi..." />
+
+		<javac srcdir="${webSrc}" destdir="${webBuild}" debug="${FOR_DEBUG}" target="${JAVA_TARGET}"  encoding="ISO-8859-1">
+			<compilerarg value="-XDignore.symbol.file" />
+			<classpath>
+				<path refid="o3-dpacs-pdi.library" />
+				
+				<path refid="runtimeCompiledLibraries" />
+				
+			</classpath>
+		</javac>
+		<echo message="Coping file that aren't class" />
+		<copy todir="${webBuild}" includeemptydirs="true">
+			<fileset dir="${webSrc}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<echo message="The file are ready for packaging" />
+	</target>
+
+
+	<target name="compileDependencies">
+		<ant antfile="buildMaps.xml" target="buildMapsPdiPackage" />
+	</target>
+ 	
+	
+	<target name="clean">
+		<echo message="Cleaning up the build directory of o3-dpacs-pdi" />
+		<delete dir="${webBuild}" />
+		<mkdir dir="${webBuild}" />
+	</target>
+
+	
+</project>
